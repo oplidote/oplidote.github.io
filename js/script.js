@@ -1,4 +1,25 @@
 $(document).ready(function () {
+    // 모달창
+    let $modal = $('.modal');
+    let $modal_close = $('.modal-close');
+    let $comment_bt = $('.comment-bt');
+    let $comment = $('.contact-comment');
+    $comment.click(function () {
+        $modal.fadeIn(300);
+    });
+    $modal_close.click(function () {
+        $modal.fadeOut(300);
+    })
+    $comment_bt.click(function () {
+
+        $(this).hide();
+        $(this).text('닫기').show(300);
+        if($modal.hasClass('comment-on')){
+            $(this).hide();
+            $(this).text('작업 리뷰').show(300);
+        }
+        $modal.toggleClass('comment-on');
+    });
     let $header = $('.header');
     // 전체화면 슬라이드
     let stat_once = 0;
@@ -15,9 +36,9 @@ $(document).ready(function () {
 
     function wrap() {
         if (window.innerWidth > 1024) {
-            // 다바이스 크기가 480이상일때 /* 스크립트내용*/ 
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
+                console.log('언디파인드');
             }
             wrap_swiper = new Swiper(".wrap-swiper", {
                 direction: 'vertical',
@@ -58,15 +79,14 @@ $(document).ready(function () {
             /* 스크립트내용*/
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
+
             }
+            console.log('소형 스와이퍼 실행');
             wrap_swiper = new Swiper(".wrap-swiper", {
                 direction: 'vertical',
-                slidesPerView: 1,
+                slidesPerView: 'auto',
+                touchRatio: 1,
                 mousewheel: true,
-                scrollContainer : true,
-                scrollbar : {
-                    container : '.swiper-scrollbar'
-                },
                 freeMode: true,
                 pagination: {
                     el: ".page-box",
@@ -89,7 +109,7 @@ $(document).ready(function () {
                             return mbti_once;
                         } else if (this.realIndex == 5 && window.innerWidth > 480) {
                             $header.fadeOut(300);
-                        } else if (this.realIndex != 5 &&window.innerWidth > 480) {
+                        } else if (this.realIndex != 5 && window.innerWidth > 480) {
                             $header.fadeIn(300);
                         }
                     }
@@ -463,7 +483,7 @@ $(document).ready(function () {
     }
     $(window).resize(function () {
         wrap();
-        $('.wrap-slide').eq(0).addClass('wrap-active');
+        // $('.wrap-slide').eq(0).addClass('wrap-active');
     }).resize();
     wrap();
 })
