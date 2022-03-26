@@ -1725,6 +1725,9 @@ section {
 
 
 @media screen and (max-width: 1024px) {
+    .sticker {
+        display: none;
+    }
     .wrap {
         width: 100vw;
         height: 100vh;
