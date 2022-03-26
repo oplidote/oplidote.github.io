@@ -64,6 +64,10 @@ $(document).ready(function () {
                 slidesPerView: 1,
                 mousewheel: true,
                 touchRatio: 0,
+                scrollContainer : true,
+                scrollbar : {
+                    container : '.swiper-scrollbar'
+                },
                 freeMode: true,
                 pagination: {
                     el: ".page-box",
