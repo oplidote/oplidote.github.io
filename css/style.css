@@ -168,6 +168,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    overflow-y: hidden;
 }
 
 /* 공통요소 */
@@ -1727,6 +1728,9 @@ section {
 @media screen and (max-width: 1024px) {
     .sticker {
         display: none;
+    }
+    .wrap-swiper {
+        overflow-y: auto;
     }
     .wrap {
         width: 100vw;
