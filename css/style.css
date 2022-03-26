@@ -168,7 +168,6 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    overflow-y: hidden;
 }
 
 /* 공통요소 */
@@ -1729,9 +1728,6 @@ section {
     .sticker {
         display: none;
     }
-    .wrap-swiper {
-        overflow-y: auto;
-    }
     .wrap {
         width: 100vw;
         height: 100vh;
@@ -2022,6 +2018,9 @@ section {
 }
 
 @media screen and (max-width: 480px) {
+    .logo {
+        width: 120px;
+    }
     .visual .container{
         padding: 30px;
     }
@@ -2117,7 +2116,10 @@ section {
         padding: 0;
     }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 390px) {
+    .logo {
+        width: 100px;
+    }
     .visual .container{
         text-align: center;
     }

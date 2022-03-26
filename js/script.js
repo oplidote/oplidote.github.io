@@ -63,7 +63,6 @@ $(document).ready(function () {
                 direction: 'vertical',
                 slidesPerView: 1,
                 mousewheel: true,
-                touchRatio: 0,
                 scrollContainer : true,
                 scrollbar : {
                     container : '.swiper-scrollbar'
