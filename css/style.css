@@ -874,6 +874,25 @@ section {
     background-color: #ebd99b;
     transform: scale(.7);
     opacity: .3;
+    z-index: -1;
+}
+.swiper-slide-active>.portfolio-box {
+    z-index: 1;
+}
+.swiper-slide-active>.portfolio-box .port-box-img::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #000;
+}
+.swiper-slide-active>.portfolio-box:hover .port-box-img::after {
+    transition: .3s;
+    opacity: .6;
 }
 
 .swiper-slide-active>.portfolio-box {
@@ -911,20 +930,19 @@ section {
     position: relative;
     display: block;
     left: auto;
-    padding-left: 18px;
-
-    width: auto;
     bottom: auto;
-    width: 50px;
+    padding-left: 22px;
+    width: auto;
     text-align: center;
     line-height: 40px;
     font-size: 15px;
     color: #fff;
+    white-space: nowrap;
 }
 
 .port-pg .swiper-pagination-current {
     position: absolute;
-    left: 4px;
+    right: 80%;
     color: #7d50f9;
 }
 
@@ -977,14 +995,37 @@ section {
     background: url('../images/arrow_icon_white.png')no-repeat center center;
     background-size: contain;
 }
-
+.box-hover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 5px;
+    transform: translate(-50%,-50%);
+    display: block;
+    font-size: 15px;
+    color: #fff;
+    z-index: 1;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+}
+.portfolio-box:hover .box-hover {
+    transition: .3s;
+    opacity: 1;
+}
+.port-tag-box {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    z-index: 1;
+}
 .port-box-img {
     position: relative;
     display: block;
     width: 100%;
     height: 150px;
     border-radius: 10px;
-    background-color: #f00;
+    background-color: #fff;
     overflow: hidden;
 }
 
@@ -998,12 +1039,6 @@ section {
     animation: img-slide 10s .5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
-.port-tag-box {
-    position: absolute;
-    top: 0;
-    left: 30px;
-    z-index: 1;
-}
 
 .port-txt-box {
     margin-top: 20px;
@@ -1013,7 +1048,7 @@ section {
     position: relative;
     display: inline-block;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .port-box-tit::before {
@@ -1030,9 +1065,13 @@ section {
 }
 
 .work-time {
-    position: relative;
     display: block;
-    font-size: 15px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.work-type {
+    display: block;
+    font-size: 14px;
 }
 
 .port-tool-box {
@@ -1785,6 +1824,9 @@ section {
     flex: 1;
     opacity: 0;
 }
+.m-comment {
+    display: none;
+}
 
 .wrap-active .contact-comment {
     animation: Boom .5s .5s;
@@ -2235,6 +2277,9 @@ section {
     }
     .contact .comment-txt {
         display: none;
+    }
+    .m-comment {
+        display: block;
     }
     /* .wrap-active .contact-comment {
         animation: none;
