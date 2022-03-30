@@ -61,12 +61,12 @@ $(document).ready(function () {
                 },
                 on: {
                     slideChange: function () {
-                        let innerAngle = (this.realIndex - prevIndex) * 90;
+                        let innerAngle = (this.realIndex - prevIndex) * 60;
                         let fieldAngle = (this.realIndex - prevIndex) * 5;
-                        let $bg_scale = 0.8 + (this.realIndex - prevIndex)*0.1;
+                        let $bg_scale = 0.8 + (this.realIndex - prevIndex) * 0.1;
                         $field.rotate(fieldAngle);
                         $sticker2_img.rotate(innerAngle);
-                        $sticker2_img.eq(1,3).rotate(-innerAngle);
+                        $sticker2_img.eq(1, 3).rotate(-innerAngle);
                         $bg.css('transform', 'scale(' + $bg_scale + ')');
                         console.log();
                         $('.wrap-slide').removeClass('wrap-active');
@@ -81,8 +81,11 @@ $(document).ready(function () {
                             return mbti_once;
                         } else if (this.realIndex == 5) {
                             $header.fadeOut(300);
+                            $bg.css('transform', 'scale(0)');
+                            $field.rotate(180);
                         } else if (this.realIndex != 5) {
                             $header.fadeIn(300);
+
                         }
                     }
                 }
@@ -500,5 +503,5 @@ $(document).ready(function () {
     }).resize();
     wrap();
     $bg.css('transform', 'scale(.9)');
-    $sticker2_img.rotate(90);
+    $sticker2_img.rotate(0);
 })
