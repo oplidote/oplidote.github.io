@@ -11,15 +11,20 @@ $(document).ready(function () {
         $modal.fadeOut(300);
     })
     $comment_bt.click(function () {
-
         $(this).hide();
         $(this).text('닫기').show(300);
-        if($modal.hasClass('comment-on')){
+        if ($modal.hasClass('comment-on')) {
             $(this).hide();
             $(this).text('작업 리뷰').show(300);
         }
         $modal.toggleClass('comment-on');
     });
+
+    let $sticker2 = $('.sticker2');
+    let $sticker2_img = $('.sticker2 img');
+    let $bg = $('.bg');
+    let $field = $('.field');
+    let prevIndex = 0;
     let $header = $('.header');
     // 전체화면 슬라이드
     let stat_once = 0;
@@ -56,7 +61,14 @@ $(document).ready(function () {
                 },
                 on: {
                     slideChange: function () {
-                        console.log(this.realIndex);
+                        let innerAngle = (this.realIndex - prevIndex) * 90;
+                        let fieldAngle = (this.realIndex - prevIndex) * 5;
+                        let $bg_scale = 0.8 + (this.realIndex - prevIndex)*0.1;
+                        $field.rotate(fieldAngle);
+                        $sticker2_img.rotate(innerAngle);
+                        $sticker2_img.eq(1,3).rotate(-innerAngle);
+                        $bg.css('transform', 'scale(' + $bg_scale + ')');
+                        console.log();
                         $('.wrap-slide').removeClass('wrap-active');
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
                         if (this.realIndex == 3 && stat_once == 0) {
@@ -132,7 +144,8 @@ $(document).ready(function () {
         pagination: {
             el: ".port-pg",
             type: "fraction",
-        }
+        },
+
     });
 
     let $port_next = $('.sw-portfolio-next');
@@ -486,4 +499,6 @@ $(document).ready(function () {
         // $('.wrap-slide').eq(0).addClass('wrap-active');
     }).resize();
     wrap();
+    $bg.css('transform', 'scale(.9)');
+    $sticker2_img.rotate(90);
 })
