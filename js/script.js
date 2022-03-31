@@ -3,11 +3,8 @@ $(document).ready(function () {
     let $modal = $('.modal');
     let $modal_close = $('.modal-close');
     let $comment_bt = $('.comment-bt');
-    let $comment = $('.contact-comment');
-    
-    $modal_close.click(function () {
-        $modal.fadeOut(300);
-    })
+    let $m_comment = $('.m-comment');
+    // 모달창 활성버튼
     $comment_bt.click(function () {
         $(this).hide();
         $(this).text('닫기').show(300);
@@ -17,26 +14,35 @@ $(document).ready(function () {
         }
         $modal.toggleClass('comment-on');
     });
+    // 모달창 닫기버튼
+    $modal_close.click(function () {
+        $modal.fadeOut(300);
+    })
+    
 
-    let $sticker2 = $('.sticker2');
+    // 변수
     let $sticker2_img = $('.sticker2 img');
     let $bg = $('.bg');
     let $field = $('.field');
-    let prevIndex = 0;
+    let prevIndex = 0; // 이전 슬라이드번호
     let $header = $('.header');
-    // 전체화면 슬라이드
-    let stat_once = 0;
-    let mbti_once = 0;
-    let menu = ['home', 'about', 'portfolio', 'skill', 'MBTI', 'contact']
+    let $swiper_wrapper = $('.swiper-wrapper');
 
-    let wrap_swiper = undefined;
+    // 전체 메뉴 버튼
     let $all_menu_bt = $('.all-menu-bt');
     let $all_menu = $('.all-menu');
     $all_menu_bt.click(function () {
         $(this).toggleClass('all-menu-bt-active');
         $all_menu.toggleClass('all-menu-active');
     })
-
+    
+    
+    
+    // 메인화면 
+    let stat_once = 0;
+    let mbti_once = 0;
+    let menu = ['home', 'about', 'portfolio', 'skill', 'MBTI', 'contact']
+    let wrap_swiper = undefined;
     function wrap() {
         if (window.innerWidth > 1024) {
             $bg.css('transform', 'scale(.8)');
@@ -62,12 +68,12 @@ $(document).ready(function () {
                     slideChange: function () {
                         let innerAngle = (this.realIndex - prevIndex) * 60;
                         let fieldAngle = (this.realIndex - prevIndex) * 5;
-                        let $bg_scale = 0.8 + (this.realIndex - prevIndex) * 0.1;
-                        $field.rotate(fieldAngle);
+                        let $bg_scale = 0.6 + (this.realIndex - prevIndex) * 0.1;
+                        $field.rotate(0);
                         $sticker2_img.rotate(innerAngle);
                         $sticker2_img.eq(0).rotate(-innerAngle);
                         $sticker2_img.eq(2).rotate(-innerAngle);
-                        $bg.css('transform', 'scale(' + $bg_scale + ')');
+                        $bg.css('transform', 'scale(0.8)');
                         $('.wrap-slide').removeClass('wrap-active');
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
 
@@ -97,7 +103,11 @@ $(document).ready(function () {
             })
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
-
+            }
+            if (window.innerWidth <= 480) {
+                $m_comment.click(function () {
+                    $modal.fadeIn(300);
+                });
             }
             console.log('소형 스와이퍼 실행');
             wrap_swiper = new Swiper(".wrap-swiper", {
@@ -135,14 +145,9 @@ $(document).ready(function () {
                 
             });
         }
-        else {
-            $comment.click(function () {
-                $modal.fadeIn(300);
-            });
-        }
     }
     // 포트폴리오 슬라이드
-    var portfolio_swiper = new Swiper(".portfolio-swiper", {
+    let portfolio_swiper = new Swiper(".portfolio-swiper", {
         slidesPerView: 1,
         loopAdditionalSlides: 3,
         loop: true,
@@ -159,24 +164,7 @@ $(document).ready(function () {
         },
 
     });
-
-    
-    let $port_next = $('.sw-portfolio-next');
-    let $port_prev = $('.sw-portfolio-prev');
-    let $gear_img = $('.gear img');
-    let angle = 0; // 현재의 각도를 변수로 저장
-    $port_prev.click(function () {
-        angle += +90;
-        $gear_img.rotate(angle);
-    });
-
-    $port_next.click(function () {
-        angle += -90;
-        $gear_img.rotate(angle);
-    });
-
-    // progressbar.js@1.0.0 version is used
-    // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+    // 스킬 프로그레스 바 
     function stat() {
         let htmlbar = new ProgressBar.Line(htmlstat, {
             easing: 'easeInOut',
@@ -340,7 +328,7 @@ $(document).ready(function () {
         jquerybar.animate(0.95); // Number from 0.0 to 1.0
         vuebar.animate(0.70); // Number from 0.0 to 1.0
     };
-
+    // MBTI 프로그레스 바 
     function mbti() {
         let e_bar = new ProgressBar.Line(e, {
             delay: 1000,
@@ -507,12 +495,11 @@ $(document).ready(function () {
         t_bar.set(1);
         t_bar.animate(0.49);
     }
+    // 리사이징
     $(window).resize(function () {
         wrap();
-        // $('.wrap-slide').eq(0).addClass('wrap-active');
     }).resize();
-    let $swiper_wrapper = $('.swiper-wrapper');
-    $(window).scroll(function () {})
+    // $(window).scroll(function () {})
     wrap();
     $sticker2_img.rotate(0);
 })
