@@ -4,9 +4,7 @@ $(document).ready(function () {
     let $modal_close = $('.modal-close');
     let $comment_bt = $('.comment-bt');
     let $comment = $('.contact-comment');
-    $comment.click(function () {
-        $modal.fadeIn(300);
-    });
+    
     $modal_close.click(function () {
         $modal.fadeOut(300);
     })
@@ -41,6 +39,7 @@ $(document).ready(function () {
 
     function wrap() {
         if (window.innerWidth > 1024) {
+            $bg.css('transform', 'scale(.8)');
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
                 console.log('언디파인드');
@@ -66,11 +65,12 @@ $(document).ready(function () {
                         let $bg_scale = 0.8 + (this.realIndex - prevIndex) * 0.1;
                         $field.rotate(fieldAngle);
                         $sticker2_img.rotate(innerAngle);
-                        $sticker2_img.eq(1, 3).rotate(-innerAngle);
+                        $sticker2_img.eq(0).rotate(-innerAngle);
+                        $sticker2_img.eq(2).rotate(-innerAngle);
                         $bg.css('transform', 'scale(' + $bg_scale + ')');
-                        console.log();
                         $('.wrap-slide').removeClass('wrap-active');
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
+
                         if (this.realIndex == 3 && stat_once == 0) {
                             stat();
                             stat_once = 1;
@@ -82,16 +82,19 @@ $(document).ready(function () {
                         } else if (this.realIndex == 5) {
                             $header.fadeOut(300);
                             $bg.css('transform', 'scale(0)');
+                            $sticker2_img.rotate(0);
                             $field.rotate(180);
                         } else if (this.realIndex != 5) {
                             $header.fadeIn(300);
-
                         }
                     }
                 }
             });
         } else if (window.innerWidth <= 1024) {
             /* 스크립트내용*/
+            $('.wrap').bind('mousewheel', function (e) {
+                $bg.css('transform', 'translateY(' + $swiper_wrapper.offset().top / 4 + 'px)');
+            })
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
 
@@ -129,6 +132,12 @@ $(document).ready(function () {
                         }
                     }
                 }
+                
+            });
+        }
+        else {
+            $comment.click(function () {
+                $modal.fadeIn(300);
             });
         }
     }
@@ -151,6 +160,7 @@ $(document).ready(function () {
 
     });
 
+    
     let $port_next = $('.sw-portfolio-next');
     let $port_prev = $('.sw-portfolio-prev');
     let $gear_img = $('.gear img');
@@ -501,7 +511,8 @@ $(document).ready(function () {
         wrap();
         // $('.wrap-slide').eq(0).addClass('wrap-active');
     }).resize();
+    let $swiper_wrapper = $('.swiper-wrapper');
+    $(window).scroll(function () {})
     wrap();
-    $bg.css('transform', 'scale(.9)');
     $sticker2_img.rotate(0);
 })
