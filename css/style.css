@@ -15,7 +15,17 @@
         transform: translateY(0);
     }
 }
-
+@-webkit-keyframes op {
+    0% {
+        opacity : .05;
+    }
+    50% {
+        opacity : .5;
+    }
+    100% {
+        opacity : .05;
+    }
+}
 @-webkit-keyframes Boom {
     0% {
         transform: scale(0);
@@ -315,7 +325,6 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    transition: 1s;
     transform: scale(0);
 }
 
@@ -500,7 +509,24 @@ body {
 .fix-content a:hover {
     background-color: #f00;
 }
-
+.gotop {
+    position: fixed;
+    display: none;
+    width: 50px;
+    height: 50px;
+    right: 40px;
+    bottom: 40px;
+    z-index: 9999;
+    background:url('../images/gotop.png') no-repeat;
+    background-size: contain;
+}
+.gotop.white {
+    background:url('../images/gotop_white.png')no-repeat;
+    background-size: contain;
+}
+.gotop img{
+    width: 100%;
+}
 .page-box {
     position: fixed;
     top: 50%;
@@ -751,7 +777,48 @@ section {
     transition: .5s 1s;
     opacity: 1;
 }
+.scroll {
+    position: absolute;
+    display: block;
+    left: 50%;
+    width: 50px;
+    color: #303033;
+    font-size: 13px;
+    transform: translateX(-50%);
+    bottom: 5%;
+    opacity: 0;
+    text-align: center;
+}
+.wrap-active .scroll{
+    opacity: 0.8;
+}
 
+.wrap-active .scroll span{
+    animation: op 2s infinite;
+}
+.arrow {
+    position: absolute;
+    display: block;
+    left: 50%;
+    width: 15px;
+    height: 20px;
+    top: -24px;
+    background:url('../images/arrow_icon.png')no-repeat top;
+    transform: translateX(-50%)rotate(-90deg);
+    background-size: contain;
+    opacity: 0;
+}
+.wrap-active .arrow:nth-child(2) {
+    animation-delay: .2s;
+    top: -36px;
+}
+.wrap-active .arrow:nth-child(3) {
+    top: -48px;
+    animation-delay: 0s;
+}
+.wrap-active .arrow {
+    animation: op 1s .4s cubic-bezier(0,0,1,1) infinite;
+}
 .profile {}
 
 .profile .container {
@@ -794,10 +861,10 @@ section {
 .profile-txt {
     position: relative;
     display: block;
-    line-height: 25px;
-    font-size: 15px;
+    line-height: 27px;
+    font-size: 18px;
     margin-top: 40px;
-    color: #707077;
+    color: #505055;
     opacity: 0;
     word-break: keep-all;
 
@@ -919,7 +986,7 @@ section {
     box-shadow: 8px 8px 0px 0px #ff2e93;
     background-color: #ebd99b;
     transform: scale(.7);
-    opacity: .3;
+    opacity: .5;
     z-index: -1;
 }
 
@@ -1134,10 +1201,7 @@ section {
     position: relative;
     display: inline-block;
     margin-top: 20px;
-}
-
-.port-tool-box span {
-    margin-right: 10px;
+    white-space: nowrap;
 }
 
 .tag {
@@ -1145,27 +1209,31 @@ section {
     display: inline-block;
     color: #fff;
     padding: 5px 5px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     text-align: center;
     border-radius: 4px;
+    margin-right: 10px;
+    box-shadow: 2px 2px 0 0 #000;
 }
 
 .tag-html {
     margin-left: 0 !important;
     background-color: #FF651E;
-    box-shadow: 2px 2px 0 0 #7d50f9;
 }
 
 .tag-css {
     background-color: #2196F3;
-    box-shadow: 2px 2px 0 0 #7d50f9;
 }
 
 .tag-js {
     color: #303033 !important;
     background-color: #FFE100;
-    box-shadow: 2px 2px 0 0 #7d50f9;
+}
+.tag-jquery {
+    margin-right: 0 !important;
+    font-size: 12px;
+    background-color: #ed4646;
 }
 
 .skill {}
@@ -1375,7 +1443,8 @@ section {
 .skill-txt>span {
     position: relative;
     display: block;
-    font-size: 15px;
+    font-size: 17px;
+    line-height: 20px;
     margin-bottom: 10px;
     opacity: 0;
 }
@@ -1754,8 +1823,8 @@ section {
     max-width: 500px;
     line-height: 25px;
     margin-bottom: 20px;
-    font-size: 15px;
-    color: #606066;
+    font-size: 17px;
+    color: #505055;
 }
 
 .mbti-txt p::before {
@@ -1938,7 +2007,7 @@ section {
 @media screen and (max-width: 1024px) {
     .bg {
         transition:none;
-        transform: scale(1);
+        transform: scale(.8);
     }
 
     .sticker {
@@ -2256,6 +2325,12 @@ section {
 }
 
 @media screen and (max-width: 480px) {
+    .gotop {
+        right: 20px;
+    }
+    .scroll {
+        bottom: 25%;
+    }
     .swiper-slide {
         height: 120%;
     }
@@ -2281,8 +2356,13 @@ section {
 
     .logo {
         width: 120px;
+        height: 55px;
+        margin-top: 5px;
+        margin-left: 5px;
     }
-
+    .all-menu-bt {
+        right: 10px;
+    }
     .visual .container {
         padding: 30px;
     }
@@ -2395,11 +2475,6 @@ section {
     .m-comment {
         display: block;
     }
-
-    /* .wrap-active .contact-comment {
-        animation: none;
-        transition: none;
-    } */
     .comment-txt {
         padding: 0;
     }

@@ -4,21 +4,49 @@ $(document).ready(function () {
     let $modal_close = $('.modal-close');
     let $comment_bt = $('.comment-bt');
     let $m_comment = $('.m-comment');
-    // 모달창 활성버튼
-    $comment_bt.click(function () {
-        $(this).hide();
-        $(this).text('닫기').show(300);
-        if ($modal.hasClass('comment-on')) {
+    if (window.innerWidth <= 480) {
+        modal();
+    }
+
+    function modal() {
+        // 모달창 활성버튼
+        $m_comment.click(function () {
+            $modal.fadeIn(300);
+        });
+        $comment_bt.click(function () {
             $(this).hide();
-            $(this).text('작업 리뷰').show(300);
-        }
-        $modal.toggleClass('comment-on');
-    });
-    // 모달창 닫기버튼
-    $modal_close.click(function () {
-        $modal.fadeOut(300);
+            $(this).text('닫기').show(300);
+            if ($modal.hasClass('comment-on')) {
+                $(this).hide();
+                $(this).text('작업 리뷰').show(300);
+            }
+            $modal.toggleClass('comment-on');
+        });
+        // 모달창 닫기버튼
+        $modal_close.click(function () {
+            $modal.fadeOut(300);
+        })
+    }
+
+    // 위로가기 버튼
+    let $gotop = $('.gotop');
+    $gotop.click(function () {
+        wrap_swiper.slideTo(0, 500);
+        $bg.css('transform', 'translateY(0)');
     })
-    
+    // 위로가기 색변 함수
+    function gotopWhite() {
+        let gotop_white = $wrap_slide.eq(4).offset().top < 0
+        $gotop.toggleClass('white', gotop_white);
+        console.log($wrap_slide.eq(4).offset().top);
+        if ($swiper_wrapper.offset().top <= -200) {
+            $('.scroll').fadeOut(300);
+            $gotop.fadeIn(300);
+        } else {
+            $('.scroll').fadeIn(300);
+            $gotop.fadeOut(300);
+        }
+    }
 
     // 변수
     let $sticker2_img = $('.sticker2 img');
@@ -27,6 +55,7 @@ $(document).ready(function () {
     let prevIndex = 0; // 이전 슬라이드번호
     let $header = $('.header');
     let $swiper_wrapper = $('.swiper-wrapper');
+    let $wrap_slide = $('.wrap-slide');
 
     // 전체 메뉴 버튼
     let $all_menu_bt = $('.all-menu-bt');
@@ -35,14 +64,13 @@ $(document).ready(function () {
         $(this).toggleClass('all-menu-bt-active');
         $all_menu.toggleClass('all-menu-active');
     })
-    
-    
-    
+
     // 메인화면 
     let stat_once = 0;
     let mbti_once = 0;
     let menu = ['home', 'about', 'portfolio', 'skill', 'MBTI', 'contact']
     let wrap_swiper = undefined;
+
     function wrap() {
         if (window.innerWidth > 1024) {
             $bg.css('transform', 'scale(.8)');
@@ -67,13 +95,10 @@ $(document).ready(function () {
                 on: {
                     slideChange: function () {
                         let innerAngle = (this.realIndex - prevIndex) * 60;
-                        let fieldAngle = (this.realIndex - prevIndex) * 5;
-                        let $bg_scale = 0.6 + (this.realIndex - prevIndex) * 0.1;
                         $field.rotate(0);
                         $sticker2_img.rotate(innerAngle);
                         $sticker2_img.eq(0).rotate(-innerAngle);
                         $sticker2_img.eq(2).rotate(-innerAngle);
-                        $bg.css('transform', 'scale(0.8)');
                         $('.wrap-slide').removeClass('wrap-active');
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
 
@@ -97,18 +122,16 @@ $(document).ready(function () {
                 }
             });
         } else if (window.innerWidth <= 1024) {
-            /* 스크립트내용*/
+            // 마우스 휠 시
             $('.wrap').bind('mousewheel', function (e) {
-                $bg.css('transform', 'translateY(' + $swiper_wrapper.offset().top / 4 + 'px)');
+                $bg.css('transform', 'translateY(' + $swiper_wrapper.offset().top / 4 + 'px) scale(0.8)');
+                gotopWhite();
             })
+
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
             }
-            if (window.innerWidth <= 480) {
-                $m_comment.click(function () {
-                    $modal.fadeIn(300);
-                });
-            }
+
             console.log('소형 스와이퍼 실행');
             wrap_swiper = new Swiper(".wrap-swiper", {
                 direction: 'vertical',
@@ -142,7 +165,7 @@ $(document).ready(function () {
                         }
                     }
                 }
-                
+
             });
         }
     }
@@ -498,8 +521,10 @@ $(document).ready(function () {
     // 리사이징
     $(window).resize(function () {
         wrap();
+        $wrap_slide.eq(0).addClass('wrap-active');
+        modal();
+        $header.fadeIn(300);
     }).resize();
-    // $(window).scroll(function () {})
     wrap();
     $sticker2_img.rotate(0);
 })
