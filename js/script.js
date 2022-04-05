@@ -75,7 +75,6 @@ $(document).ready(function () {
                 on: {
                     slideChange: function () {
                         let innerAngle = (this.realIndex - prevIndex) * 60;
-                        $field.rotate(0);
                         $sticker2_img.rotate(innerAngle);
                         $sticker2_img.eq(0).rotate(-innerAngle);
                         $sticker2_img.eq(2).rotate(-innerAngle);
@@ -94,9 +93,9 @@ $(document).ready(function () {
                             $header.fadeOut(300);
                             $bg.css('transform', 'scale(0)');
                             $sticker2_img.rotate(0);
-                            $field.rotate(180);
                         } else if (this.realIndex != 5) {
                             $header.fadeIn(300);
+                            $bg.css('transform', 'scale(.8)');
                         }
                     }
                 }
