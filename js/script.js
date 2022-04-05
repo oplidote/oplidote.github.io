@@ -8,19 +8,13 @@ $(document).ready(function () {
         modal();
     }
 
+    // $(document).bind('touchmove', function (e) {
+    // });
+
     function modal() {
         // 모달창 활성버튼
         $m_comment.click(function () {
             $modal.fadeIn(300);
-        });
-        $comment_bt.click(function () {
-            $(this).hide();
-            $(this).text('닫기').show(300);
-            if ($modal.hasClass('comment-on')) {
-                $(this).hide();
-                $(this).text('작업 리뷰').show(300);
-            }
-            $modal.toggleClass('comment-on');
         });
         // 모달창 닫기버튼
         $modal_close.click(function () {
@@ -34,19 +28,6 @@ $(document).ready(function () {
         wrap_swiper.slideTo(0, 500);
         $bg.css('transform', 'translateY(0)');
     })
-    // 위로가기 색변 함수
-    function gotopWhite() {
-        let gotop_white = $wrap_slide.eq(4).offset().top < 0
-        $gotop.toggleClass('white', gotop_white);
-        console.log($wrap_slide.eq(4).offset().top);
-        if ($swiper_wrapper.offset().top <= -200) {
-            $('.scroll').fadeOut(300);
-            $gotop.fadeIn(300);
-        } else {
-            $('.scroll').fadeIn(300);
-            $gotop.fadeOut(300);
-        }
-    }
 
     // 변수
     let $sticker2_img = $('.sticker2 img');
@@ -76,7 +57,6 @@ $(document).ready(function () {
             $bg.css('transform', 'scale(.8)');
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
-                console.log('언디파인드');
             }
             wrap_swiper = new Swiper(".wrap-swiper", {
                 direction: 'vertical',
@@ -124,15 +104,14 @@ $(document).ready(function () {
         } else if (window.innerWidth <= 1024) {
             // 마우스 휠 시
             $('.wrap').bind('mousewheel', function (e) {
-                $bg.css('transform', 'translateY(' + $swiper_wrapper.offset().top / 4 + 'px) scale(0.8)');
-                gotopWhite();
+                let pos = parseInt($swiper_wrapper.offset().top);
+                $bg.css('transform', 'translateY(' + pos / 4 + 'px) scale(0.8)');
             })
 
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
             }
 
-            console.log('소형 스와이퍼 실행');
             wrap_swiper = new Swiper(".wrap-swiper", {
                 direction: 'vertical',
                 slidesPerView: 'auto',
@@ -148,19 +127,31 @@ $(document).ready(function () {
                 },
                 on: {
                     slideChange: function () {
-                        console.log(this.realIndex);
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
+                        let m_index4 = this.realIndex == 4 && window.innerWidth <= 480;
+                        let index5 = this.realIndex == 5;
+                        console.log(this.realIndex);
+                        $gotop.toggleClass('white', index5 || m_index4);
+                        if (this.realIndex != 0) {
+                            $gotop.fadeIn(300);
+                            $
+                        } else if (this.realIndex == 0) {
+                            $gotop.fadeOut(300);
+                        }
                         if (this.realIndex == 3 && stat_once == 0) {
                             stat();
                             stat_once = 1;
                             return stat_once;
-                        } else if (this.realIndex == 4 && mbti_once == 0) {
+                        }
+                        if (this.realIndex == 4 && mbti_once == 0) {
                             mbti();
                             mbti_once = 1;
                             return mbti_once;
-                        } else if (this.realIndex == 5 && window.innerWidth > 480) {
+                        }
+                        if (this.realIndex == 5 && window.innerWidth > 480) {
                             $header.fadeOut(300);
-                        } else if (this.realIndex != 5 && window.innerWidth > 480) {
+                        }
+                        if (this.realIndex != 5 && window.innerWidth > 480) {
                             $header.fadeIn(300);
                         }
                     }

@@ -149,7 +149,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* outline-style: none; */
+    outline-style: none;
 }
 
 a {
@@ -788,14 +788,15 @@ section {
     bottom: 5%;
     opacity: 0;
     text-align: center;
+    transition: .5s;
 }
-.wrap-active .scroll{
+.scroll span{
+    animation: op 2s infinite;
+}
+.swiper-slide-active .scroll{
     opacity: 0.8;
 }
 
-.wrap-active .scroll span{
-    animation: op 2s infinite;
-}
 .arrow {
     position: absolute;
     display: block;
@@ -2364,7 +2365,7 @@ section {
         right: 10px;
     }
     .visual .container {
-        padding: 30px;
+        padding: 10px 30px;
     }
 
     .visual-txt {
@@ -2411,7 +2412,7 @@ section {
     }
 
     .wrap-6 {
-        height: 250px;
+        height: 240px;
     }
 
     .contact {
@@ -2508,7 +2509,9 @@ section {
 
     .visual .container {
         text-align: center;
+        padding: 0 10px;
     }
+    
 
     .visual-txt {
         width: 100%;
@@ -2521,7 +2524,7 @@ section {
         margin: 0;
         font-size: 50px;
         margin-top: -10px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .profile .container {
