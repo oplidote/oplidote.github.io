@@ -49,7 +49,7 @@ $(document).ready(function () {
     // 메인화면 
     let stat_once = 0;
     let mbti_once = 0;
-    let menu = ['home', 'about', 'portfolio', 'skill', 'MBTI', 'contact']
+    let menu = ['HOME', 'ABOUT', 'CLONE', 'SKILL', 'MBTI', 'CONTACT']
     let wrap_swiper = undefined;
 
     function wrap() {
@@ -69,12 +69,19 @@ $(document).ready(function () {
                     el: ".page-box",
                     clickable: true,
                     renderBullet: function (index, className) {
-                        return '<span class="' + className + '">' + (menu[index]) + '</span>';
+                        return '<span class="' + className + '">'
+                        + '<span class="page-txt">'
+                        + (menu[index]) + '</span></span>';
                     },
                 },
                 on: {
                     slideChange: function () {
                         let innerAngle = (this.realIndex - prevIndex) * 60;
+                        $('.page-box').rotate(-innerAngle);
+                        
+                        $('.page-txt').each(function(index,item){
+                            $(this).rotate(innerAngle - (60*index));
+                        });
                         $sticker2_img.rotate(innerAngle);
                         $sticker2_img.eq(0).rotate(-innerAngle);
                         $sticker2_img.eq(2).rotate(-innerAngle);
@@ -84,15 +91,16 @@ $(document).ready(function () {
                         if (this.realIndex == 3 && stat_once == 0) {
                             stat();
                             stat_once = 1;
+                            $bg.css('transform', 'scale(.8)');
                             return stat_once;
                         } else if (this.realIndex == 4 && mbti_once == 0) {
                             mbti();
                             mbti_once = 1;
+                            $bg.css('transform', 'scale(.8)');
                             return mbti_once;
                         } else if (this.realIndex == 5) {
                             $header.fadeOut(300);
-                            $bg.css('transform', 'scale(0)');
-                            $sticker2_img.rotate(0);
+                            $bg.css('transform', 'scale(8)');
                         } else if (this.realIndex != 5) {
                             $header.fadeIn(300);
                             $bg.css('transform', 'scale(.8)');
@@ -166,7 +174,7 @@ $(document).ready(function () {
         loop: true,
         speed: 300,
         centeredSlides: true,
-        spaceBetween: 50,
+        spaceBetween: 0,
         navigation: {
             nextEl: ".sw-portfolio-next",
             prevEl: ".sw-portfolio-prev",
