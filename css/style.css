@@ -959,9 +959,12 @@ section {
 }
 
 .portfolio {
-    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
 }
-.portfolio .container {}
+.wrap-active .portfolio {
+    opacity: 1;
+}
 
 .portfolio-tit {
     position: relative;
@@ -994,29 +997,94 @@ section {
     opacity: .3;
     z-index: -1;
 }
+.port-change {
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 50px;
+    opacity: 0;
+    text-align: center;
+    transition: .5s;
+}
+.wrap-active .port-change {
+    opacity: 1;
+}
 
-.portfolio-swiper {
+.port-change button {
     position: relative;
+    display: block;
+    border: 0;
+    font-size: 20px;
+    color: #aaa;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Cairo';
+    font-weight: bold;
+    line-height: 1em;
+    z-index: 99;
+}
+.port-change button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #aaa;
+}
+
+.clone-bt {
+    margin-bottom: 20px;
+}
+.clone-on .clone-bt,
+.project-on .project-bt {
+    color: #000;
+}
+.clone-on .clone-bt::before,
+.project-on .project-bt::before {
+    background-color: red;
+}
+/*
+.port-change:hover .clone-bt {
+    transform: rotateY(180deg);
+}
+
+.port-change:hover .project-bt {
+    opacity: 1;
+    transform: rotateY(0deg);
+} */
+.portfolio .swiper {
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
     width: 300px;
     height: 400px;
     margin: 0 auto;
     opacity: 0;
+    z-index: -1;
     transition: .5s;
 }
-
-.wrap-active .portfolio-swiper {
-    transition: .3s;
+.clone-on .portfolio-swiper {
     opacity: 1;
+    z-index: 1;
 }
 
-.portfolio .swiper-slide {}
+.project-on .project-swiper {
+    z-index: 1;
+    opacity: 1;
+}
 
 .portfolio-box {
     position: relative;
     display: block;
     width: 300px;
+    margin-top: 30px;
     height: 350px;
-    margin: 50px 0;
     padding: 40px 35px;
     border-radius: 30px;
     box-shadow: 8px 8px 0px 0px #ff2e93;
@@ -1056,19 +1124,16 @@ section {
 }
 
 .port-control {
-    position: absolute;
-    display: flex;
-    bottom: -75px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-top: 20px;
     z-index: 999;
-    background-color: #00e6b3;
-    box-shadow: 2px 3px 0px 0px #7d50f9;
-    border-radius: 20px;
+    text-align: center;
 }
 
-.sw-portfolio-next {
-    position: relative;
+.port-next {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: block;
     width: 40px;
     height: 40px;
@@ -1082,7 +1147,7 @@ section {
 
 .port-pg {
     position: relative;
-    display: block;
+    display: inline-block;
     left: auto;
     bottom: auto;
     padding-left: 22px;
@@ -1090,7 +1155,7 @@ section {
     text-align: center;
     line-height: 40px;
     font-size: 15px;
-    color: #fff;
+    color: #333;
     white-space: nowrap;
 }
 
@@ -1104,7 +1169,7 @@ section {
     margin-left: 5px;
 }
 
-.sw-portfolio-next::after {
+.port-next::after {
     content: '';
     position: relative;
     display: inline-block;
@@ -1117,12 +1182,13 @@ section {
     transform: rotate(180deg);
 }
 
-.sw-portfolio-next:hover {
+.port-next:hover {
     transform: scale(1);
 }
 
-.sw-portfolio-prev {
-    position: relative;
+.port-prev {
+    position: absolute;
+    left: 0;
     display: block;
     width: 40px;
     height: 40px;
@@ -1134,11 +1200,11 @@ section {
     transition: .2s;
 }
 
-.sw-portfolio-prev:hover {
+.port-prev:hover {
     transform: scale(1);
 }
 
-.sw-portfolio-prev::after {
+.port-prev::after {
     content: '';
     position: relative;
     display: inline-block;
@@ -1224,7 +1290,7 @@ section {
 
 .work-time {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 5px;
 }
 
@@ -1267,9 +1333,11 @@ section {
     background-color: #FFE100;
 }
 .tag-jquery {
-    margin-right: 0 !important;
     font-size: 12px;
     background-color: #ed4646;
+}
+.tag-vue {
+    background-color:rgb(0, 193, 128);
 }
 
 .skill {}
@@ -2425,7 +2493,6 @@ section {
 
     .port-control {
         right: auto;
-        bottom: -75px;
         left: 50%;
         transform: translateX(-50%);
     }

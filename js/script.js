@@ -49,7 +49,7 @@ $(document).ready(function () {
     // 메인화면 
     let stat_once = 0;
     let mbti_once = 0;
-    let menu = ['HOME', 'ABOUT', 'CLONE', 'SKILL', 'MBTI', 'CONTACT']
+    let menu = ['HOME', 'ABOUT', 'PROJECT', 'SKILL', 'MBTI', 'CONTACT']
     let wrap_swiper = undefined;
 
     function wrap() {
@@ -167,7 +167,19 @@ $(document).ready(function () {
             });
         }
     }
-    // 포트폴리오 슬라이드
+    // 포트폴리오 모드 변경
+    let $portfolio = $('.portfolio');
+    let $clone_bt = $('.clone-bt');
+    let $project_bt = $('.project-bt');
+    $clone_bt.click(function() {
+        $portfolio.removeClass('clone-on project-on');
+        $portfolio.addClass('clone-on');
+    })
+    $project_bt.click(function() {
+        $portfolio.removeClass('clone-on project-on');
+        $portfolio.addClass('project-on');
+    })
+    // 클론 슬라이드
     let portfolio_swiper = new Swiper(".portfolio-swiper", {
         slidesPerView: 1,
         loopAdditionalSlides: 3,
@@ -178,6 +190,24 @@ $(document).ready(function () {
         navigation: {
             nextEl: ".sw-portfolio-next",
             prevEl: ".sw-portfolio-prev",
+        },
+        pagination: {
+            el: ".port-pg",
+            type: "fraction",
+        },
+
+    });
+    // 프로젝트 슬라이드
+    let project_swiper = new Swiper(".project-swiper", {
+        slidesPerView: 1,
+        loopAdditionalSlides: 3,
+        loop: true,
+        speed: 300,
+        centeredSlides: true,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: ".sw-project-next",
+            prevEl: ".sw-project-prev",
         },
         pagination: {
             el: ".port-pg",
