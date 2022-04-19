@@ -167,23 +167,21 @@ $(document).ready(function () {
             });
         }
     }
-    // // 포트폴리오 모드 변경
-    // let $portfolio = $('.portfolio');
-    // let $clone_bt = $('.clone-bt');
-    // let $project_bt = $('.project-bt');
-    // $clone_bt.click(function() {
-    //     $portfolio.removeClass('clone-on project-on');
-    //     $portfolio.addClass('clone-on');
-    // })
-    // $project_bt.click(function() {
-    //     $portfolio.removeClass('clone-on project-on');
-    //     $portfolio.addClass('project-on');
-    // })
+    // 포트폴리오 모드 변경
+    let $portfolio = $('.portfolio');
+    let $clone_bt = $('.clone-bt');
+    let $project_bt = $('.project-bt');
+    $clone_bt.click(function() {
+        $portfolio.removeClass('clone-on project-on');
+        $portfolio.addClass('clone-on');
+    })
+    $project_bt.click(function() {
+        $portfolio.removeClass('clone-on project-on');
+        $portfolio.addClass('project-on');
+    })
     // 클론 슬라이드
     let portfolio_swiper = new Swiper(".portfolio-swiper", {
         slidesPerView: 1,
-        effect: 'fade',
-        direction: 'vertical',
         loopAdditionalSlides: 3,
         loop: true,
         speed: 300,
@@ -202,8 +200,6 @@ $(document).ready(function () {
     // 프로젝트 슬라이드
     let project_swiper = new Swiper(".project-swiper", {
         slidesPerView: 1,
-        effect: 'fade',
-        direction: 'vertical',
         loopAdditionalSlides: 3,
         loop: true,
         speed: 300,

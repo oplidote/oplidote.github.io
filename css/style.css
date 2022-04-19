@@ -962,12 +962,11 @@ section {
     opacity: 0;
     transition: .5s;
 }
+.portfolio .container {
+    height: 100%;
+}
 .wrap-active .portfolio {
     opacity: 1;
-}
-.portfolio .container{
-    display: flex;
-    justify-content: space-around;
 }
 
 .portfolio-tit {
@@ -1005,7 +1004,8 @@ section {
     position: absolute;
     display: block;
     top: 20px;
-    left: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0;
     text-align: center;
     transition: .5s;
@@ -1013,26 +1013,103 @@ section {
 .wrap-active .port-change {
     opacity: 1;
 }
-.portfolio .swiper {
+
+.port-change button {
     position: relative;
     display: block;
+    border: 0;
+    font-size: 25px;
+    color: #999;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Cairo';
+    font-weight: bold;
+    line-height: 1em;
+    z-index: 99;
+}
+.port-change button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #999;
+}
+
+.clone-bt {
+    margin-bottom: 20px;
+}
+.clone-on .clone-bt,
+.project-on .project-bt {
+    color: #000;
+}
+.clone-on .clone-bt::before,
+.project-on .project-bt::before {
+    background-color: red;
+}
+.clone-control,
+.project-control {
+    display: none;
+    z-index: 999;
+}
+.clone-on .clone-control {
+    display: block;
+}
+.project-on .project-control {
+    display: block;
+}
+/*
+.port-change:hover .clone-bt {
+    transform: rotateY(180deg);
+}
+
+.port-change:hover .project-bt {
+    opacity: 1;
+    transform: rotateY(0deg);
+} */
+.portfolio .swiper {
+    position: absolute;
+    display: block;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 300px;
-    height: 400px;
+    height: 300px;
     margin: 0 auto;
+    opacity: 0;
+    z-index: -1;
     transition: .5s;
+}
+.clone-on .portfolio-swiper {
+    opacity: 1;
+    z-index: 1;
+}
+
+.project-on .project-swiper {
+    z-index: 1;
+    opacity: 1;
 }
 
 .portfolio-box {
     position: relative;
     display: block;
     width: 300px;
-    margin-top: 30px;
-    height: 350px;
-    padding: 40px 35px;
-    border-radius: 30px;
-    transform: rotateY(180deg);
-    opacity: 0;
-    transition: .5s;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px #ff2e93;
+    background-color: #ebd99b;
+    transform: scale(.7);
+    opacity: .5;
+    z-index: -1;
+}
+
+.swiper-slide-active>.portfolio-box {
+    z-index: 1;
 }
 
 .swiper-slide-active>.portfolio-box .port-box-img::after {
@@ -1053,32 +1130,32 @@ section {
 }
 
 .swiper-slide-active>.portfolio-box {
-    transform: rotateY(0);
+    transform: scale(1);
+    transition: .5s;
     opacity: 1;
     background-color: #00e6b3;
     box-shadow: 0px 0px 30px 0px #7d50f9;
-    z-index: 1;
 }
 
-.port-control {
+.port-pg-box {
     position: relative;
-    margin-top: 20px;
-    z-index: 999;
+    display: block;
     text-align: center;
 }
 
 .port-next {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50%;
+    right: 2%;
     display: block;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    z-index: 999;
     background-color: #00e6b3;
     text-align: center;
     cursor: pointer;
-    transform: scale(.8);
+    transform: scale(1.5) translateY(-50%);
     transition: .2s;
 }
 
@@ -1120,12 +1197,14 @@ section {
 }
 
 .port-next:hover {
-    transform: scale(1);
+    transform: scale(1.6) translateY(-50%);
 }
 
 .port-prev {
     position: absolute;
-    left: 0;
+    top: 50%;
+    z-index: 999;
+    left: 2%;
     display: block;
     width: 40px;
     height: 40px;
@@ -1133,12 +1212,12 @@ section {
     background-color: #00e6b3;
     text-align: center;
     cursor: pointer;
-    transform: scale(.8);
+    transform: scale(1.5) translateY(-50%);
     transition: .2s;
 }
 
 .port-prev:hover {
-    transform: scale(1);
+    transform: scale(1.6) translateY(-50%);
 }
 
 .port-prev::after {
@@ -1203,6 +1282,7 @@ section {
 
 .port-txt-box {
     margin-top: 20px;
+    padding-left: 10px;
 }
 
 .port-box-tit {
@@ -1239,20 +1319,9 @@ section {
 .port-tool-box {
     position: relative;
     display: inline-block;
-    margin-top: 14px;
+    margin-top: 10px;
     white-space: nowrap;
 }
-.sw-port-tit {
-    position: relative;
-    display: block;
-    margin-top: 10%;
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Cairo';
-    font-weight: bold;
-}
-
-
 
 .tag {
     position: relative;
@@ -1260,11 +1329,10 @@ section {
     color: #fff;
     padding: 5px 5px;
     font-size: 13px;
+    width: 50px;
     font-weight: bold;
     text-align: center;
     border-radius: 4px;
-    margin-right: 10px;
-    box-shadow: 2px 2px 0 0 #000;
 }
 
 .tag-html {
@@ -2187,9 +2255,21 @@ section {
         transition-delay: 1.4s !important;
         animation-delay: 1.4s !important;
     }
-
-    .portfolio-tit {
-        display: block;
+    .portfolio .swiper {
+        top: 100px;
+    }
+    .port-change {
+        position: relative;
+    }
+    .port-change button{
+        display: inline-block;
+        margin: 0 20px;
+    }
+    .port-next {
+        top: 40%;
+    }
+    .port-prev {
+        top: 40%;
     }
 
     .comment-txt {
@@ -2438,15 +2518,8 @@ section {
     .profile-left {
         padding: 0;
     }
-    .port-change {
-        position: relative;
-        left: 0;
-        margin: 20px 0;
-    }
-    .port-change button{
-        display: inline-block;
-        margin: 0 20px;
-    }
+    
+
     .port-control {
         right: auto;
         left: 50%;
