@@ -233,9 +233,9 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
-                    right: '-40px',
+                    right: '-25px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -269,9 +269,9 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
-                    right: '-40px',
+                    right: '-25px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -299,9 +299,9 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
-                    right: '-40px',
+                    right: '-25px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -329,9 +329,9 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
-                    right: '-40px',
+                    right: '-25px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -359,9 +359,99 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
-                    right: '-40px',
+                    right: '-25px',
+                    top: '-2px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
+                autoStyleContainer: false
+            },
+            step: (state, bar) => {
+                bar.setText(Math.round(bar.value() * 100) + ' %');
+            }
+        });
+        let bootbar = new ProgressBar.Line(bootstat, {
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1600,
+            color: '#7d50f9',
+            trailColor: '#eee',
+            trailWidth: 1,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '3px'
+            },
+            text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#777',
+                    position: 'absolute',
+                    right: '-25px',
+                    top: '-2px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
+                autoStyleContainer: false
+            },
+            step: (state, bar) => {
+                bar.setText(Math.round(bar.value() * 100) + ' %');
+            }
+        });
+        let dbbar = new ProgressBar.Line(dbstat, {
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1600,
+            color: '#1b2955',
+            trailColor: '#eee',
+            trailWidth: 1,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '3px'
+            },
+            text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#777',
+                    position: 'absolute',
+                    right: '-25px',
+                    top: '-2px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
+                autoStyleContainer: false
+            },
+            step: (state, bar) => {
+                bar.setText(Math.round(bar.value() * 100) + ' %');
+            }
+        });
+        let phpbar = new ProgressBar.Line(phpstat, {
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1600,
+            color: '#8b93bb',
+            trailColor: '#eee',
+            trailWidth: 1,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '3px'
+            },
+            text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#777',
+                    position: 'absolute',
+                    right: '-25px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -378,6 +468,9 @@ $(document).ready(function () {
         jsbar.animate(0.9); // Number from 0.0 to 1.0
         jquerybar.animate(0.95); // Number from 0.0 to 1.0
         vuebar.animate(0.70); // Number from 0.0 to 1.0
+        bootbar.animate(0.80); // Number from 0.0 to 1.0
+        dbbar.animate(0.40); // Number from 0.0 to 1.0
+        phpbar.animate(0.20); // Number from 0.0 to 1.0
     };
     // MBTI 프로그레스 바 
     function mbti() {
@@ -398,7 +491,7 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
                     top: '-15px',
                     left: '50%',
@@ -429,7 +522,7 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
                     left: '50%',
                     top: '-15px',
@@ -460,7 +553,7 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
                     left: '50%',
                     top: '-15px',
@@ -491,7 +584,7 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
                     left: '50%',
                     top: '-15px',
@@ -522,7 +615,7 @@ $(document).ready(function () {
                 style: {
                     // Text color.
                     // Default: same as stroke color (options.color)
-                    color: '#999',
+                    color: '#777',
                     position: 'absolute',
                     left: '50%',
                     top: '-15px',
