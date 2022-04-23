@@ -295,10 +295,13 @@ body {
 }
 
 .container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
-    max-width: 1080px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 5%;
 }
 
 .title {
@@ -348,12 +351,12 @@ body {
     position: absolute;
     display: block;
     transition: 1.5s;
-    opacity: 0.2;
+    opacity: 1;
 }
 
 .sticker2 img {
     width: 100%;
-    opacity: .7;
+    opacity: .08;
     transition: 1s;
 }
 
@@ -430,6 +433,7 @@ body {
 .fs-20 {
     font-size: 20px;
 }
+
 
 .tag-mobile {
     position: relative;
@@ -550,10 +554,11 @@ body {
     border-radius: 50%;
     font-size: 20px;
     line-height: 90px;
-    color: #fff;
+    color: #303033;
     transform-origin: center 170px;
     opacity: 1;
     text-align: center;
+    background-color: transparent;
 }
 .page-box .swiper-pagination-bullet-active {
     font-weight: 500;
@@ -563,35 +568,29 @@ body {
     opacity: 1;
 }
 .page-box .swiper-pagination-bullet:nth-child(1) {
-    background-color: #7d50f9;
     transform: rotate(0deg);
 }
 .page-box .swiper-pagination-bullet:nth-child(2) {
-    background-color: #ed4646;
     transform: rotate(60deg);
 }
 .page-box .swiper-pagination-bullet:nth-child(3) {
-    background-color: #fdad2d;
     transform: rotate(120deg);
 }
 .page-box .swiper-pagination-bullet:nth-child(4) {
-    background-color: #2196F3;
     transform: rotate(180deg);
 }
 .page-box .swiper-pagination-bullet:nth-child(5) {
-    background-color: #FF651E;
     transform: rotate(240deg);
 }
 .page-box .swiper-pagination-bullet:nth-child(6) {
-    background-color: #142664;
     transform: rotate(300deg);
-    color: #fff;
 }
 .page-box .swiper-pagination-bullet span{
     position: relative;
     display: block;
     transition: .5s;
     font-family: 'Cairo';
+    font-weight: bold;
 }
 .page-box .swiper-pagination-bullet:nth-child(1) span{
     transform:rotate(0)
@@ -616,7 +615,8 @@ body {
 
 /* 헤더 */
 .header {
-    position: relative;
+    position: absolute;
+    top: 0;
     display: block;
     width: 100%;
     z-index: 9999;
@@ -724,7 +724,7 @@ body {
     height: 100%;
     flex-direction: column;
     justify-content: space-around;
-    padding: 30% 20%;
+    padding: 45% 20%;
 }
 .gnb li {
     position: relative;
@@ -792,7 +792,6 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    padding-top: 105px;
 }
 
 section {
@@ -806,12 +805,11 @@ section {
     flex-flow: column;
 }
 
-.visual {}
-
 .visual .container {
+    
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+
 }
 
 .visual-photo {
@@ -843,6 +841,7 @@ section {
     opacity: 0;
     right: -50px;
     transition: .3s;
+    white-space: nowrap;
 }
 
 .wrap-active .visual-txt {
@@ -896,11 +895,11 @@ section {
     position: absolute;
     display: block;
     left: 50%;
-    width: 15px;
+    width: 20px;
     height: 20px;
     top: -24px;
-    background:url('../images/arrow_icon.png')no-repeat top;
-    transform: translateX(-50%)rotate(-90deg);
+    background:url('../images/arrow-icon.png')no-repeat top;
+    transform: translateX(-50%);
     background-size: contain;
     opacity: 0;
 }
@@ -915,11 +914,8 @@ section {
 .wrap-active .arrow {
     animation: op 1s .4s cubic-bezier(0,0,1,1) infinite;
 }
-.profile {}
-
 .profile .container {
     display: flex;
-    padding: 50px 50px;
 }
 
 .profile-left {
@@ -1023,7 +1019,6 @@ section {
     transition: .5s;
 }
 .portfolio .container {
-    height: 100%;
 }
 .wrap-active .portfolio {
     opacity: 1;
@@ -1061,11 +1056,9 @@ section {
     z-index: -1;
 }
 .port-change {
-    position: absolute;
+    position: relative;
     display: block;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-bottom: 2%;
     opacity: 0;
     text-align: center;
     transition: .5s;
@@ -1076,7 +1069,8 @@ section {
 
 .port-change button {
     position: relative;
-    display: block;
+    display: inline-block;
+    margin: 0 20px;
     border: 0;
     font-size: 25px;
     color: #999;
@@ -1112,38 +1106,24 @@ section {
 .project-on .project-bt::before {
     background-color: red;
 }
-.clone-control,
-.project-control {
-    display: none;
-    z-index: 999;
-}
-.clone-on .clone-control {
-    display: block;
-}
-.project-on .project-control {
-    display: block;
-}
-/*
-.port-change:hover .clone-bt {
-    transform: rotateY(180deg);
-}
 
-.port-change:hover .project-bt {
-    opacity: 1;
-    transform: rotateY(0deg);
-} */
 .portfolio .swiper {
-    position: absolute;
+    position: relative;
     display: block;
-    top: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 300px;
+    
+    width: 30%;
+    max-width: 400px;
+    height: 400px;
     margin: 0 auto;
     opacity: 0;
     z-index: -1;
     transition: .5s;
+    margin-bottom: 5vh;
+}
+.portfolio-swiper {
+    position: absolute !important;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .clone-on .portfolio-swiper {
     opacity: 1;
@@ -1154,17 +1134,17 @@ section {
     z-index: 1;
     opacity: 1;
 }
-
+.portfolio .swiper-wrapper{
+    padding-top: 10vh;
+}
 .portfolio-box {
     position: relative;
     display: block;
-    width: 300px;
+    width: 100%;
     padding: 10px 10px;
     border-radius: 20px;
-    box-shadow: 0px 0px 20px 0px #ff2e93;
-    background-color: #ebd99b;
+    border: 3px solid #000;
     transform: scale(.7);
-    opacity: .5;
     z-index: -1;
 }
 
@@ -1193,42 +1173,37 @@ section {
     transform: scale(1);
     transition: .5s;
     opacity: 1;
-    background-color: #00e6b3;
     box-shadow: 0px 0px 30px 0px #7d50f9;
 }
 
-.port-pg-box {
+.port-control {
     position: relative;
     display: block;
-    text-align: center;
 }
-
-.port-next {
+.sw-portfolio-next {
     position: absolute;
-    top: 50%;
     right: 2%;
     display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     z-index: 999;
-    background-color: #00e6b3;
     text-align: center;
     cursor: pointer;
-    transform: scale(1.5) translateY(-50%);
     transition: .2s;
+    background: url('../images/arr.png')no-repeat center center;
+    background-size: cover;
 }
-
 .port-pg {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: inline-block;
-    left: auto;
     bottom: auto;
     padding-left: 22px;
     width: auto;
     text-align: center;
     line-height: 40px;
-    font-size: 15px;
+    font-size: 20px;
     color: #333;
     white-space: nowrap;
 }
@@ -1243,53 +1218,29 @@ section {
     margin-left: 5px;
 }
 
-.port-next::after {
-    content: '';
-    position: relative;
-    display: inline-block;
-    right: -2px;
-    top: 0;
-    width: 14px;
-    height: 40px;
-    background: url('../images/arrow_icon_white.png')no-repeat center center;
-    background-size: contain;
-    transform: rotate(180deg);
+
+
+.sw-portfolio-next:hover {
 }
 
-.port-next:hover {
-    transform: scale(1.6) translateY(-50%);
-}
-
-.port-prev {
+.sw-portfolio-prev {
     position: absolute;
-    top: 50%;
     z-index: 999;
     left: 2%;
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: #00e6b3;
     text-align: center;
     cursor: pointer;
-    transform: scale(1.5) translateY(-50%);
     transition: .2s;
-}
-
-.port-prev:hover {
-    transform: scale(1.6) translateY(-50%);
-}
-
-.port-prev::after {
-    content: '';
-    position: relative;
-    display: inline-block;
-    left: -2px;
-    top: 0;
-    width: 14px;
-    height: 40px;
-    background: url('../images/arrow_icon_white.png')no-repeat center center;
+    transform: rotate(180deg);
+    background: url('../images/arr.png')no-repeat center center;
     background-size: contain;
+}
+
+.sw-portfolio-prev:hover {
 }
 
 .box-hover {
@@ -1323,10 +1274,11 @@ section {
     position: relative;
     display: block;
     width: 100%;
-    height: 150px;
+    height: 200px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #000;
     overflow: hidden;
+    border: 3px solid #333;
 }
 
 .port-box-img img {
@@ -1348,7 +1300,7 @@ section {
 .port-box-tit {
     position: relative;
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 15px;
 }
 
@@ -1367,19 +1319,20 @@ section {
 
 .work-time {
     display: block;
-    font-size: 13px;
+    font-size: 17px;
     margin-bottom: 5px;
 }
 
 .work-type {
     display: block;
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .port-tool-box {
     position: relative;
-    display: inline-block;
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
     white-space: nowrap;
 }
 
@@ -1425,7 +1378,7 @@ section {
 .skill-left {
     position: relative;
     display: block;
-    padding-top: 50px;
+    padding-top: 10%;
     width: 450px;
 }
 
@@ -1622,21 +1575,22 @@ section {
     z-index: -1;
 }
 
-.skill-txt>span {
+.skill-txt>p {
     position: relative;
     display: block;
     font-size: 17px;
     line-height: 20px;
     margin-bottom: 10px;
+
     opacity: 0;
 }
 
-.wrap-active .skill-txt>span {
+.wrap-active .skill-txt>p {
     transition: opacity .5s 1.5s;
     opacity: 1;
 }
 
-.skill-txt>span::before {
+.skill-txt>p::before {
     content: '';
     position: absolute;
     left: -10px;
@@ -1645,13 +1599,19 @@ section {
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background-color: #303033;
+    background-color: #313330;
 }
-
+.skill-txt b {
+    font-size: 22px;
+    font-weight: bold;
+    color:#284f97;
+    animation: Bounce .5s ease infinite;
+}
 .skill-progress {
     position: relative;
     display: flex;
     opacity: 0;
+    padding-left: 10%;
 }
 
 .wrap-active .skill-progress {
@@ -1688,12 +1648,6 @@ section {
     width: 80%;
     height: 8px;
     position: relative;
-}
-
-.mbti {}
-
-.mbti .container {
-    padding: 0 50px;
 }
 
 .mbti-tit {
@@ -1876,7 +1830,8 @@ section {
     position: absolute;
     display: block;
     left: 0;
-    font-size: 20px;
+    font-size: 26px;
+
 }
 
 .mbti-box span:last-child {
@@ -1884,7 +1839,7 @@ section {
     display: block;
     top: 0;
     right: 0;
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .mbti-not {
@@ -1990,21 +1945,21 @@ section {
 .mbti-txt h2 {
     padding-bottom: 30px;
     font-size: 15px;
-    color: #303033;
+    color: #777;
 }
 
 .mbti-txt h2 b {
     font-size: 30px;
     padding-right: 10px;
+    color: #333;
 }
 
 .mbti-txt p {
     position: relative;
-    display: inline-block;
-    max-width: 500px;
+    display: block;
     line-height: 25px;
     margin-bottom: 20px;
-    font-size: 17px;
+    font-size: 20px;
     color: #505055;
 }
 
@@ -2039,10 +1994,6 @@ section {
 
 }
 
-.contact .container {
-    padding: 0 50px;
-}
-
 .contact-bt {
     position: absolute;
     display: none;
@@ -2059,7 +2010,7 @@ section {
 .contact-tit {
     position: relative;
     display: block;
-    padding: 50px 0 5% 0;
+    padding-bottom:5%;
     font-size: 40px;
     color: #fff;
     text-align: center;
@@ -2249,7 +2200,7 @@ section {
     }
 
     .profile-txt,
-    .skill-txt>span,
+    .skill-txt>p,
     .skill-txt::after {
         transition-delay: .3s !important;
     }
@@ -2264,11 +2215,10 @@ section {
     .page-box {
         display: none;
     }
-
-    .skill .container {
-        padding: 50px;
+    .skill-progress {
+        padding-top: 20%;
+        padding-left: 5%;
     }
-
     .skill-progress,
     .mbti-tit span::before,
     .mbti-tit span::after {
@@ -2315,20 +2265,10 @@ section {
         transition-delay: 1.4s !important;
         animation-delay: 1.4s !important;
     }
-    .portfolio .swiper {
-        top: 100px;
-    }
-    .port-change {
-        position: relative;
-    }
-    .port-change button{
-        display: inline-block;
-        margin: 0 20px;
-    }
-    .port-next {
+    .sw-portfolio-next {
         top: 40%;
     }
-    .port-prev {
+    .sw-portfolio-prev {
         top: 40%;
     }
 
@@ -2343,9 +2283,6 @@ section {
     }
     .gnb li button{
         font-size: 25px;
-    }
-    .wrap-3 {
-        padding-top: 50px !important;
     }
 
     .visual .container {
@@ -2379,7 +2316,12 @@ section {
     .profile-right {
         display: none;
     }
-
+    .portfolio .container {
+        top: 40%;
+    }
+    .portfolio .swiper {
+        width: 50%;
+    }
     .skill .container {
         display: flex;
         flex-flow: column;
@@ -2388,7 +2330,7 @@ section {
 
     .skill-left {
         width: calc(140px * 3);
-        display: flex;
+        display: none;
         margin: 0 auto;
         padding-top: 0;
         justify-content: center;
@@ -2396,10 +2338,11 @@ section {
     }
 
     .skill-right {
+        flex-direction: column-reverse;
         width: 100%;
     }
 
-    .skill-box {
+    /* .skill-box {
         width: 128px;
         margin: 0 !important;
         font-size: 0 !important;
@@ -2486,7 +2429,7 @@ section {
 
     .skill-box:last-child img {
         width: 80px !important;
-    }
+    } */
 
     .skill-txt {
         padding: 20px 10% 20px 10%;
@@ -2501,7 +2444,7 @@ section {
     .skill-tit {
         position: absolute;
         left: 50%;
-        top: -300px;
+        top: -80%;
         transform: translateX(-50%);
     }
 
@@ -2520,11 +2463,11 @@ section {
 }
 
 @media screen and (max-width: 480px) {
+    .gnb {
+        padding: 60% 20%;
+    }
     .gotop {
         right: 20px;
-    }
-    .scroll {
-        bottom: 25%;
     }
     .swiper-slide {
         height: 120%;
@@ -2546,7 +2489,6 @@ section {
     .inner-gear4{
         top: 50%;
         left: 80%;
-
     }
 
     .logo {
@@ -2557,6 +2499,9 @@ section {
     }
     .all-menu-bt {
         right: 10px;
+    }
+    .wrap-1 {
+        height: 100% !important;
     }
     .visual .container {
         padding: 10px 30px;
@@ -2580,7 +2525,9 @@ section {
     .profile-left {
         padding: 0;
     }
-    
+    .portfolio .swiper {
+        width: 60%;
+    }
 
     .port-control {
         right: auto;
@@ -2692,7 +2639,9 @@ section {
 }
 
 @media screen and (max-width: 390px) {
-
+    .scroll {
+        left: 90%;
+    }
     .modal-wrap {
         width: 350px;
     }
@@ -2729,7 +2678,9 @@ section {
         font-size: 17px;
         line-height: 25px;
     }
-
+    .portfolio .swiper {
+        width: 70%;
+    }
     .skill-left {
         width: 278px;
     }

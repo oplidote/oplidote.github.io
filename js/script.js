@@ -206,8 +206,8 @@ $(document).ready(function () {
         centeredSlides: true,
         spaceBetween: 0,
         navigation: {
-            nextEl: ".sw-project-next",
-            prevEl: ".sw-project-prev",
+            nextEl: ".sw-portfolio-next",
+            prevEl: ".sw-portfolio-prev",
         },
         pagination: {
             el: ".port-pg",
@@ -373,11 +373,71 @@ $(document).ready(function () {
                 bar.setText(Math.round(bar.value() * 100) + ' %');
             }
         });
+        let gitbar = new ProgressBar.Line(gitstat, {
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1600,
+            color: '#1b1d21',
+            trailColor: '#eee',
+            trailWidth: 1,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '3px'
+            },
+            text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#777',
+                    position: 'absolute',
+                    right: '-25px',
+                    top: '-2px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
+                autoStyleContainer: false
+            },
+            step: (state, bar) => {
+                bar.setText(Math.round(bar.value() * 100) + ' %');
+            }
+        });
         let bootbar = new ProgressBar.Line(bootstat, {
             easing: 'easeInOut',
             duration: 1400,
             delay: 1600,
             color: '#7d50f9',
+            trailColor: '#eee',
+            trailWidth: 1,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '3px'
+            },
+            text: {
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: '#777',
+                    position: 'absolute',
+                    right: '-25px',
+                    top: '-2px',
+                    padding: 0,
+                    margin: 0,
+                    transform: null
+                },
+                autoStyleContainer: false
+            },
+            step: (state, bar) => {
+                bar.setText(Math.round(bar.value() * 100) + ' %');
+            }
+        });
+        let cbar = new ProgressBar.Line(cstat, {
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 1600,
+            color: '#4a8bc6',
             trailColor: '#eee',
             trailWidth: 1,
             svgStyle: {
@@ -467,8 +527,10 @@ $(document).ready(function () {
         cssbar.animate(0.97); // Number from 0.0 to 1.0
         jsbar.animate(0.9); // Number from 0.0 to 1.0
         jquerybar.animate(0.95); // Number from 0.0 to 1.0
-        vuebar.animate(0.70); // Number from 0.0 to 1.0
-        bootbar.animate(0.80); // Number from 0.0 to 1.0
+        vuebar.animate(0.75); // Number from 0.0 to 1.0
+        gitbar.animate(0.70); // Number from 0.0 to 1.0
+        bootbar.animate(0.70); // Number from 0.0 to 1.0
+        cbar.animate(0.50); // Number from 0.0 to 1.0
         dbbar.animate(0.40); // Number from 0.0 to 1.0
         phpbar.animate(0.20); // Number from 0.0 to 1.0
     };
