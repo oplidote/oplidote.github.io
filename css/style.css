@@ -433,7 +433,12 @@ body {
 .fs-20 {
     font-size: 20px;
 }
-
+.ani-none {
+    animation: none !important;
+}
+.hei-auto {
+    height: auto !important;
+}
 
 .tag-mobile {
     position: relative;
@@ -536,7 +541,7 @@ body {
 .page-box {
     position: fixed;
     bottom: -180px;
-    left: calc(50% - 150px);
+    left: calc(50% - 170px);
     display: block;
     transition: .5s;
     border-radius: 50%;
@@ -1285,6 +1290,7 @@ section {
     position: relative;
     display: block;
     width: 100%;
+    background-size: cover;
 }
 
 .wrap-active .swiper-slide-active>.portfolio-box img {
