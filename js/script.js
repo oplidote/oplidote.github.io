@@ -131,7 +131,7 @@ $(document).ready(function () {
                 mousewheel: true,
                 freeMode: true,
                 pagination: {
-                    el: ".page-box",
+                    el: ".gnb",
                     clickable: true,
                     renderBullet: function (index, className) {
                         return '<span class="' + className + '">' + (menu[index]) + '</span>';
