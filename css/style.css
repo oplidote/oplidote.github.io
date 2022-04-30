@@ -425,7 +425,7 @@ body {
     width: 30px;
     height: 30px;
     margin-left: 2px;
-    background-color: #00e6b3;
+    background-color: #7d50f9;
     box-shadow: 3px 3px 0px 0px #7d50f9;
     border-radius: 5px;
 }
@@ -527,7 +527,7 @@ body {
     height: 50px;
     right: 40px;
     bottom: 40px;
-    z-index: 9999;
+    z-index: 999;
     background:url('../images/gotop.png') no-repeat;
     background-size: contain;
 }
@@ -563,7 +563,7 @@ body {
     transform-origin: center 130px;
     opacity: 1;
     text-align: center;
-    background-color: #555;
+    background-color: #7d50f9;
 }
 .page-box .swiper-pagination-bullet-active {
     font-weight: 500;
@@ -726,7 +726,8 @@ body {
     height: 100%;
     flex-direction: column;
     justify-content: space-around;
-    margin: 45% 15%;
+    padding: 45% 0;
+    margin: 0 15%;
     overflow: hidden;
 }
 .gnb .swiper-pagination-bullet::before{
@@ -754,7 +755,7 @@ body {
     height: auto;
     border-radius: 0;
     border: 0;
-    font-size: 30px;
+    font-size: 27px;
     font-family: 'Cairo';
     background-color: transparent;
     cursor: pointer;
@@ -823,11 +824,18 @@ section {
     height: 500px;
     border-radius: 50%;
     box-shadow: 0px 0px 30px 0px #333;
-    background: #7d50f9 url('../images/profile_jeju.png')no-repeat center;
-    background-size: cover;
-    background-position: -10px 0px;
+    overflow: hidden;
+    flex: none;
     opacity: 0;
     transition: opacity .3s;
+}
+.visual-photo img {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #7d50f9;
+    object-fit: cover;
+    background-position: -10px 0px;
 }
 
 .wrap-active .visual-photo {
@@ -929,13 +937,13 @@ section {
     padding: 0 50px;
 }
 
-.profile-left h1 {
+.tit {
     font-size: 40px;
     opacity: 0;
 
 }
 
-.wrap-active .profile-left h1 {
+.wrap-active .tit {
     position: relative;
     display: inline-block;
     opacity: 1;
@@ -943,7 +951,7 @@ section {
     animation: Bounce .5s .5s;
 }
 
-.wrap-active .profile-left h1::after {
+.wrap-active .tit::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -951,8 +959,8 @@ section {
     width: 100%;
     height: 15px;
     border-radius: 8px;
-    background-color: #ebd99b;
-    opacity: 0.6;
+    background-color: #7d50f9;
+    opacity: 0.5;
     z-index: -1;
 }
 
@@ -992,7 +1000,7 @@ section {
 }
 
 .profile-txt b {
-    color: #FF651E !important;
+    color: #7d50f9 !important;
 }
 
 .profile-right {
@@ -1242,7 +1250,7 @@ section {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #00e6b3;
+    background-color: #7d50f9;
     text-align: center;
     cursor: pointer;
     transition: .2s;
@@ -1313,6 +1321,10 @@ section {
     position: relative;
     display: inline-block;
     font-size: 25px;
+    background-color: #7d50f9;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
     margin-bottom: 15px;
 }
 
@@ -1563,31 +1575,7 @@ section {
     display: none;
 }
 
-.skill-tit span {
-    position: relative;
-    display: inline-block;
-    font-size: 40px;
-    opacity: 0;
-}
 
-.wrap-active .skill-tit span {
-    transition: opacity .5s .5s;
-    opacity: 1;
-    animation: Bounce .5s .5s;
-}
-
-.skill-tit span::before {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: 0;
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    background-color: #379ad6;
-    opacity: .3;
-    z-index: -1;
-}
 
 .skill-txt>p {
     position: relative;
@@ -1618,7 +1606,7 @@ section {
 .skill-txt b {
     font-size: 22px;
     font-weight: bold;
-    color:#284f97;
+    color:#7d50f9;
     animation: Bounce .5s ease infinite;
 }
 .skill-progress {
@@ -1996,7 +1984,7 @@ section {
 }
 
 .contact {
-    background-image: radial-gradient(circle farthest-corner at center center, #00e6b3 0%, #00e6b3 50%, transparent 50.1%);
+    background-image: radial-gradient(circle farthest-corner at center center, #7d50f9 0%, #7d50f9 50%, transparent 50.1%);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 0% 0%;
@@ -2134,7 +2122,7 @@ section {
 }
 
 .comment-txt b {
-    color: #FF651E;
+    color: #7d50f9;
 }
 
 .comment-txt strong {
@@ -2209,7 +2197,7 @@ section {
         overflow: visible;
     }
 
-    .profile-left h1,
+    .tit,
     .skill-box:nth-child(3),
     .skill-tit,
     .mbti-tit b {
@@ -2484,8 +2472,8 @@ section {
 }
 
 @media screen and (max-width: 480px) {
-    .gnb {
-        padding: 60% 20%;
+    .gnb .swiper-pagination-bullet {
+        font-size: 22px;
     }
     .gotop {
         right: 20px;
@@ -2581,11 +2569,14 @@ section {
     .wrap-6 {
         height: 240px;
     }
+    .wrap-6 .container {
+        top: 40%;
+    }
 
     .contact {
         opacity: 1;
         background-image: none;
-        background-color: #00e6b3;
+        background-color: #7d50f9;
         background-size: 100%;
     }
 
