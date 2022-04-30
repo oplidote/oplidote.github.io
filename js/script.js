@@ -69,18 +69,20 @@ $(document).ready(function () {
                     el: ".page-box",
                     clickable: true,
                     renderBullet: function (index, className) {
-                        return '<span class="' + className + '">'
-                        + '<span class="page-txt">'
-                        + (menu[index]) + '</span></span>';
+                        return '<span class="' + className + '">' +
+                            '<span class="page-txt">' +
+                            (menu[index]) + '</span></span>';
                     },
                 },
                 on: {
                     slideChange: function () {
                         let innerAngle = (this.realIndex - prevIndex) * 60;
+                        if (this.realIndex != 0) {
+
+                        }
                         $('.page-box').rotate(-innerAngle);
-                        
-                        $('.page-txt').each(function(index,item){
-                            $(this).rotate(innerAngle - (60*index));
+                        $('.page-txt').each(function (index, item) {
+                            $(this).rotate(innerAngle - (60 * index));
                         });
                         $sticker2_img.rotate(innerAngle);
                         $sticker2_img.eq(0).rotate(-innerAngle);
@@ -109,11 +111,14 @@ $(document).ready(function () {
                 }
             });
         } else if (window.innerWidth <= 1024) {
-            // 마우스 휠 시
-            $('.wrap').bind('mousewheel', function (e) {
-                let pos = parseInt($swiper_wrapper.offset().top);
-                $bg.css('transform', 'translateY(' + pos / 4 + 'px) scale(0.8)');
-            })
+            if (window.innerWidth > 480) {
+
+                // 마우스 휠 시
+                $('.wrap').bind('mousewheel', function (e) {
+                    let pos = parseInt($swiper_wrapper.offset().top);
+                    $bg.css('transform', 'translateY(' + pos / 4 + 'px) scale(0.8)');
+                })
+            }
 
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
@@ -167,15 +172,25 @@ $(document).ready(function () {
             });
         }
     }
+    var profile_swiper = new Swiper(".profile-swiper", {
+        effect: "fade",
+        autoplay: {
+            delay: 2000,
+        },
+        speed: 1000,
+        spaceBetween: 20,
+        loop: true,
+        grabCursor: true,
+    });
     // 포트폴리오 모드 변경
     let $portfolio = $('.portfolio');
     let $clone_bt = $('.clone-bt');
     let $project_bt = $('.project-bt');
-    $clone_bt.click(function() {
+    $clone_bt.click(function () {
         $portfolio.removeClass('clone-on project-on');
         $portfolio.addClass('clone-on');
     })
-    $project_bt.click(function() {
+    $project_bt.click(function () {
         $portfolio.removeClass('clone-on project-on');
         $portfolio.addClass('project-on');
     })

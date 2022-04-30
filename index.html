@@ -98,9 +98,7 @@
                 <div class="swiper-slide wrap-slide wrap-1">
                     <section class="visual">
                         <div class="container">
-                            <div class="visual-photo">
-                                <img src="" alt="">
-                            </div>
+                            <div class="visual-photo"></div>
                             <div class="visual-txt">
                                 <b>소통</b> 하는 개발자<br><br>
                                 <strong>"진현우"</strong>
@@ -133,7 +131,25 @@
 
                             </div>
                             <div class="profile-right">
-                                <div class="profile-photo"></div>
+                                <div class="swiper profile-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="profile-photo" src="images/profile_coding.jpg" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="profile-photo" src="images/profile_jeju3.JPG" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="profile-photo" src="images/profile_sisun.jpg" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="profile-photo" src="images/profile_busan.jpg" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="profile-photo" src="images/profile_workout.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -386,7 +402,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="swiper project-swiper">
                                 <div class="port-control">
@@ -432,7 +448,7 @@
                                             <div class="port-txt-box">
                                                 <h2 class="port-box-tit">FLEX & GRID</h2>
                                                 <span class="work-time">작업기간 : 3일</span>
-                                                <span class="work-type">flex와 grid 학습을 위해 제작된 페이지</span>
+                                                <span class="work-type">flex와 grid의 이해를 돕기 위해 제작된 사이트</span>
                                             </div>
                                             <div class="port-tool-box">
                                                 <span class="tag tag-html">HTML</span>
@@ -444,15 +460,16 @@
                                         </a>
                                     </div>
                                 </div>
-                                
+
                             </div>
-                            
+
                         </div>
                     </section>
                 </div>
                 <div class="swiper-slide wrap-slide wrap-4">
                     <section class="skill">
                         <div class="container">
+                            <h1 class="skill-tit tit-mb"><span>Skill</span></h1>
                             <div class="skill-left">
                                 <div class="skill-box">
                                     <img src="images/html5.png" alt="">
@@ -472,43 +489,48 @@
                             </div>
                             <div class="skill-right">
                                 <div class="skill-txt">
-                                    <h1 class="skill-tit"><span>Skills</span></h1>
+                                    <h1 class="skill-tit tit-pc"><span>Skill</span></h1>
                                     <p>웹 접근성과 표준을 고려하여 시맨틱 마크업을 수행할 수 있습니다.</p>
                                     <p>주어진 디자인 레이아웃을 <b>CSS</b> 로 스타일링이 가능하며 <b>flex</b> 와 <b>grid</b> 를 활용할 수 있습니다.</p>
                                     <p><b>media query</b> 로 반응형 웹을 구현할 수 있습니다.</p>
-                                    <p><b>JS</b >와 <b>Jquery</b> 로 원하는 기능을 구현하고 라이브러리를 활용할 수 있습니다.</p>
+                                    <p><b>JS</b>와 <b>Jquery</b> 로 원하는 기능을 구현하고 라이브러리를 활용할 수 있습니다.</p>
                                     <p><b>Vue.js</b> 로 컴포넌트와 페이지를 분리하여 관리할 수 있습니다.</p>
-                                    <p><b>DB</b> 를 이해하고 <b>MariaDB</b> 를 통해 간단한 <b>DB</b> 관리가 가능하며 <b>PHP</b> 와 연동할 수 있습니다.</p>
+                                    <p><b>DB</b> 를 이해하고 <b>MariaDB</b> 를 통해 간단한 <b>DB</b> 관리가 가능하며 <b>PHP</b> 와 연동할 수
+                                        있습니다.</p>
                                     <p><b>Github</b> 를 이용해 배포 및 버전관리가 가능합니다.</p>
                                 </div>
                                 <div class="skill-progress">
-                                    <div class="skill-progress-txt">
-                                        <span>HTML</span>
-                                        <span>CSS</span>
-                                        <span>JS</span>
-                                        <span>Jquery</span>
-                                        <span>Vue.js</span>
+                                    <div class="progress-box">
+                                        <div class="skill-progress-txt">
+                                            <span>HTML</span>
+                                            <span>CSS</span>
+                                            <span>JS</span>
+                                            <span>Jquery</span>
+                                            <span>Vue.js</span>
+                                        </div>
+                                        <div class="skill-stat">
+                                            <div id="htmlstat"></div>
+                                            <div id="cssstat"></div>
+                                            <div id="jsstat"></div>
+                                            <div id="jquerystat"></div>
+                                            <div id="vuestat"></div>
+                                        </div>
                                     </div>
-                                    <div class="skill-stat">
-                                        <div id="htmlstat"></div>
-                                        <div id="cssstat"></div>
-                                        <div id="jsstat"></div>
-                                        <div id="jquerystat"></div>
-                                        <div id="vuestat"></div>
-                                    </div>
-                                    <div class="skill-progress-txt">
-                                        <span>Github</span>
-                                        <span>Bootstrap</span>
-                                        <span>C</span>
-                                        <span>MariaDB</span>
-                                        <span>PHP</span>
-                                    </div>
-                                    <div class="skill-stat">
-                                        <div id="gitstat"></div>
-                                        <div id="bootstat"></div>
-                                        <div id="cstat"></div>
-                                        <div id="dbstat"></div>
-                                        <div id="phpstat"></div>
+                                    <div class="progress-box">
+                                        <div class="skill-progress-txt">
+                                            <span>Github</span>
+                                            <span>Bootstrap</span>
+                                            <span>C</span>
+                                            <span>MariaDB</span>
+                                            <span>PHP</span>
+                                        </div>
+                                        <div class="skill-stat">
+                                            <div id="gitstat"></div>
+                                            <div id="bootstat"></div>
+                                            <div id="cstat"></div>
+                                            <div id="dbstat"></div>
+                                            <div id="phpstat"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
