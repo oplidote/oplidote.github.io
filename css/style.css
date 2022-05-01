@@ -871,6 +871,12 @@ section {
     border-radius: 20px;
     background-color: #7d50f9;
 }
+.visual-txt p {
+    font-weight: bold;
+    font-size: 40px;
+    display: inline-block;
+    font-family: 'Cairo';
+}
 
 .visual-txt strong {
     margin-left: 80px;
@@ -1016,15 +1022,22 @@ section {
     border-radius: 10px;
 
     height: 50vh;
-    box-shadow: 0px 0px 20px 0px #333;
 }
+
 
 .profile-photo {
     position: relative;
+    transform: rotateY(180deg);
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: .5s;
+}
+.profile-swiper .swiper-slide-active .profile-photo {
+    transform: rotateY(0deg);
+    opacity: 1;
 }
 
 
