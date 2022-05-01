@@ -23,11 +23,11 @@ $(document).ready(function () {
     }
 
     // 위로가기 버튼
-    let $gotop = $('.gotop');
-    $gotop.click(function () {
-        wrap_swiper.slideTo(0, 500);
-        $bg.css('transform', 'translateY(0)');
-    })
+    // let $gotop = $('.gotop');
+    // $gotop.click(function () {
+    //     wrap_swiper.slideTo(0, 500);
+    //     $bg.css('transform', 'translateY(0)');
+    // })
 
     // 변수
     let $sticker2_img = $('.sticker2 img');
@@ -129,17 +129,18 @@ $(document).ready(function () {
                 },
                 on: {
                     slideChange: function () {
+                        // .............gotop 관련 코드............
+                        // let m_index4 = this.realIndex == 4 && window.innerWidth <= 480;
+                        // let index5 = this.realIndex == 5;
+                        // $gotop.toggleClass('white', index5 || m_index4);
+                        // if (this.realIndex != 0) {
+                        //     $gotop.fadeIn(300);
+                        // } else if (this.realIndex == 0) {
+                        //     $gotop.fadeOut(300);
+                        // }
+                        
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
-                        let m_index4 = this.realIndex == 4 && window.innerWidth <= 480;
-                        let index5 = this.realIndex == 5;
                         console.log(this.realIndex);
-                        $gotop.toggleClass('white', index5 || m_index4);
-                        if (this.realIndex != 0) {
-                            $gotop.fadeIn(300);
-                            $
-                        } else if (this.realIndex == 0) {
-                            $gotop.fadeOut(300);
-                        }
                         if (this.realIndex == 3 && stat_once == 0) {
                             stat();
                             stat_once = 1;
