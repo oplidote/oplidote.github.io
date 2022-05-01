@@ -65,22 +65,12 @@ $(document).ready(function () {
                 mousewheel: true,
                 touchRatio: 0,
                 speed: 500,
-                pagination: {
-                    el: ".page-box",
-                    clickable: true,
-                    renderBullet: function (index, className) {
-                        return '<span class="' + className + '">' +
-                            '<span class="page-txt">' +
-                            (menu[index]) + '</span></span>';
-                    },
-                },
                 on: {
                     slideChange: function () {
                         let innerAngle = (this.realIndex - prevIndex) * 60;
                         if (this.realIndex != 0) {
 
                         }
-                        $('.page-box').rotate(-innerAngle);
                         $('.page-txt').each(function (index, item) {
                             $(this).rotate(innerAngle - (60 * index));
                         });
