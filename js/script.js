@@ -207,7 +207,6 @@ $(document).ready(function () {
     let project_swiper = new Swiper(".project-swiper", {
         slidesPerView: 1,
         loopAdditionalSlides: 3,
-        loop: true,
         speed: 300,
         centeredSlides: true,
         spaceBetween: 0,
