@@ -240,7 +240,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -276,7 +276,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -306,7 +306,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -336,7 +336,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -366,7 +366,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -396,7 +396,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -412,7 +412,7 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 1600,
-            color: '#7d50f9',
+            color: '#9f72fc',
             trailColor: '#eee',
             trailWidth: 1,
             svgStyle: {
@@ -426,7 +426,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -456,7 +456,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -486,7 +486,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
@@ -516,7 +516,7 @@ $(document).ready(function () {
                     // Default: same as stroke color (options.color)
                     color: '#777',
                     position: 'absolute',
-                    right: '-25px',
+                    right: '-35px',
                     top: '-2px',
                     padding: 0,
                     margin: 0,
