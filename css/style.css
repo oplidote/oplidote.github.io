@@ -682,8 +682,8 @@ body {
 .all-menu-bt {
     position: absolute;
     display: none;
-    top: 50%;
-    transform: translateY(-50%) scale(0.8);
+    margin-top: 3%;
+    transform: scale(0.8);
     right: 20px;
     width: 50px;
     height: 44px;
@@ -1009,14 +1009,19 @@ section {
 }
 
 .profile-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 50%;
-    padding: 0 50px;
+    padding: 0 5%;
 }
 
 .tit {
     font-size: 40px;
     opacity: 0;
-
+}
+.tit span{
+    position: relative;
 }
 
 .wrap-active .tit {
@@ -1027,7 +1032,7 @@ section {
     animation: Bounce .5s .5s;
 }
 
-.wrap-active .tit::after {
+.wrap-active .tit span::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1042,14 +1047,15 @@ section {
 
 .profile-txt {
     position: relative;
-    display: block;
-    line-height: 27px;
+    display: flex;
+    flex-direction: column;
     font-size: 18px;
-    margin-top: 40px;
     color: #505055;
     opacity: 0;
     word-break: keep-all;
-
+    padding: 10% 0;
+    flex-grow: 1;
+    justify-content: space-around;
 }
 
 .wrap-active .profile-txt {
@@ -1060,7 +1066,6 @@ section {
 .profile-txt span {
     position: relative;
     display: block;
-    margin-bottom: 5px;
 }
 
 .profile-txt span::before {
@@ -1088,8 +1093,8 @@ section {
 
 .profile-swiper {
     overflow: hidden;
-    margin: 10%;
-
+    margin: auto;
+    max-width: 400px;
     height: 50vh;
 }
 
@@ -1161,7 +1166,7 @@ section {
 .port-change {
     position: relative;
     display: block;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     opacity: 0;
     text-align: center;
     transition: .5s;
@@ -1217,9 +1222,8 @@ section {
 .portfolio .swiper {
     position: relative;
     display: block;
-    width: 30%;
-    max-width: 400px;
-    height: 400px;
+    width: 20vw;
+    height: 25vw;
     margin: 0 auto;
     opacity: 0;
     z-index: -1;
@@ -1251,7 +1255,7 @@ section {
     display: block;
     overflow: hidden;
     width: 100%;
-    height: 200px;
+    height: 100%;
     background: #7d50f9;
     border: 3px solid #000;
     transform: scale(.7);
@@ -1260,6 +1264,10 @@ section {
 
 .swiper-slide-active>.portfolio-box {
     z-index: 1;
+    transform: scale(1);
+    transition: .5s;
+    opacity: 1;
+    box-shadow: 0px 0px 30px 0px #7d50f9;
 }
 
 .swiper-slide-active>.portfolio-box::after {
@@ -1279,13 +1287,6 @@ section {
     opacity: .6;
 }
 
-.swiper-slide-active>.portfolio-box {
-    transform: scale(1);
-    height: 300px;
-    transition: .5s;
-    opacity: 1;
-    box-shadow: 0px 0px 30px 0px #7d50f9;
-}
 
 .port-control {
     position: relative;
@@ -2127,8 +2128,10 @@ section {
     }
 
     .logo {
-        margin-left: 20px;
+        position: absolute;
+        left: 3%;
     }
+
 
     .all-menu-bt {
         display: block;
@@ -2137,9 +2140,21 @@ section {
     .profile-swiper {
         margin: 10%;
     }
-
+    
     .portfolio {
         overflow: visible;
+    }
+    .portfolio .swiper {
+        width: 30vw;
+    }
+    .portfolio-box {
+        height: 35vw;
+    }
+    .port-change {
+        margin-bottom: 10%;
+    }
+    .portfolio .swiper-wrapper {
+        padding-top: 12vh;
     }
 
     .tit,
@@ -2149,7 +2164,7 @@ section {
         transition-delay: 0s !important;
         animation-delay: 0s !important;
     }
-
+    
     .profile-txt,
     .skill-txt>p,
     .skill-txt::after {
@@ -2162,7 +2177,9 @@ section {
     .mbti-tit {
         transition-delay: 0s !important;
     }
-
+    .skill-txt {
+        padding: 0 5% 5%;
+    }
     .page-box {
         display: none;
     }
@@ -2279,7 +2296,6 @@ section {
     }
 
     .profile-left {
-        padding: 0 5%;
         flex: 1;
         text-align: center;
     }
@@ -2300,10 +2316,12 @@ section {
         top: 40%;
     }
 
-    .portfolio .swiper {
-        width: 50%;
+   .portfolio .swiper {
+        width: 35vw;
     }
-
+    .portfolio-box {
+        height: 40vw;
+    }
     .skill .container {
         display: flex;
         flex-flow: column;
@@ -2356,6 +2374,18 @@ section {
 
     .ps {
         margin-top: 10px !important;
+    }
+}
+@media screen and (max-width:570px) {
+    .visual-photo {
+        width: 450px;
+        height: 450px;
+    }
+    .portfolio .swiper {
+        width: 40vw;
+    }
+    .portfolio-box {
+        height: 45vw;
     }
 }
 
@@ -2448,7 +2478,10 @@ section {
         line-height: 22px;
     }
     .portfolio .swiper {
-        width: 60%;
+        width: 50vw;
+    }
+    .portfolio-box {
+        height: 55vw;
     }
     .port-change {
         margin-bottom: 10%;
