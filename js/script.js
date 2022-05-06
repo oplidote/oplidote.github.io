@@ -79,7 +79,12 @@ $(document).ready(function () {
                         $sticker2_img.eq(2).rotate(-innerAngle);
                         $('.wrap-slide').removeClass('wrap-active');
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
-
+                        if(this.realIndex == 0) {
+                            $header.fadeIn(300);
+                        }
+                        if(this.realIndex != 0) {
+                            $header.fadeOut(300);
+                        }
                         if (this.realIndex == 3 && stat_once == 0) {
                             stat();
                             stat_once = 1;
@@ -90,12 +95,6 @@ $(document).ready(function () {
                             mbti_once = 1;
                             $bg.css('transform', 'scale(.8)');
                             return mbti_once;
-                        } else if (this.realIndex == 5) {
-                            $header.fadeOut(300);
-                            $bg.css('transform', 'scale(8)');
-                        } else if (this.realIndex != 5) {
-                            $header.fadeIn(300);
-                            $bg.css('transform', 'scale(.8)');
                         }
                     }
                 }
@@ -151,27 +150,25 @@ $(document).ready(function () {
                             mbti_once = 1;
                             return mbti_once;
                         }
-                        if (this.realIndex == 5 && window.innerWidth > 480) {
-                            $header.fadeOut(300);
-                        }
-                        if (this.realIndex != 5 && window.innerWidth > 480) {
-                            $header.fadeIn(300);
-                        }
+                        
                     }
                 }
 
             });
         }
     }
-    var profile_swiper = new Swiper(".profile-swiper", {
+    var life_swiper = new Swiper(".life-swiper", {
         effect: "fade",
         autoplay: {
-            delay: 2000,
+            delay: 5000,
         },
-        speed: 1000,
+        speed: 500,
         spaceBetween: 20,
         loop: true,
         grabCursor: true,
+        navigation: {
+            nextEl: ".sw-life-next",
+        },
     });
     // 포트폴리오 모드 변경
     let $portfolio = $('.portfolio');
@@ -227,7 +224,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1200,
             color: '#FF651E',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -263,7 +260,7 @@ $(document).ready(function () {
             duration: 1300,
             delay: 1300,
             color: '#379ad6',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -293,7 +290,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1400,
             color: '#FFE100',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -323,7 +320,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1500,
             color: '#ed4646',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -353,7 +350,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1600,
             color: '#00c180',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -383,7 +380,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1600,
             color: '#1b1d21',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -413,7 +410,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1600,
             color: '#9f72fc',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -443,7 +440,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1600,
             color: '#4a8bc6',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -473,7 +470,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1600,
             color: '#1b2955',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',
@@ -503,7 +500,7 @@ $(document).ready(function () {
             duration: 1400,
             delay: 1600,
             color: '#8b93bb',
-            trailColor: '#eee',
+            trailColor: '#fff',
             trailWidth: 1,
             svgStyle: {
                 width: '100%',

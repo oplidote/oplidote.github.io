@@ -797,8 +797,8 @@ body {
     height: auto;
     border-radius: 0;
     border: 0;
-    font-size: 27px;
-    font-family: 'Goldman','Cairo';
+    font-size: 22px;
+    font-family: 'Goldman';
     background-color: transparent;
     cursor: pointer;
     color: #fff;
@@ -1091,26 +1091,18 @@ section {
     opacity: 0;
 }
 
-.profile-swiper {
-    overflow: hidden;
-    margin: auto;
-    max-width: 400px;
-    height: 50vh;
-}
-
-
 .profile-photo {
     position: relative;
     display: block;
-    width: 100%;
-    height: 100%;
-    border:2px solid #000;
+    width: 90%;
+    margin: 0 auto;
     object-fit: cover;
     opacity: 0;
+    border-radius: 50%;
     transition: .5s;
 }
 
-.profile-swiper .swiper-slide-active .profile-photo {
+.wrap-active .profile-photo {
     opacity: 1;
 }
 
@@ -1124,9 +1116,6 @@ section {
     opacity: 0;
     transition: .5s;
 }
-
-.portfolio .container {}
-
 .wrap-active .portfolio {
     opacity: 1;
 }
@@ -1166,7 +1155,6 @@ section {
 .port-change {
     position: relative;
     display: block;
-    margin-bottom: 5%;
     opacity: 0;
     text-align: center;
     transition: .5s;
@@ -1179,8 +1167,10 @@ section {
 .port-change button {
     position: relative;
     display: inline-block;
-    margin: 0 20px;
+    margin:0 78px;
+    margin-bottom: 5%;
     border: 0;
+    padding-left: 15px;
     font-size: 25px;
     color: #999;
     border-radius: 10px;
@@ -1197,7 +1187,7 @@ section {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: -15px;
+    left: 0;
     display: block;
     width: 6px;
     height: 6px;
@@ -1225,6 +1215,7 @@ section {
     width: 20vw;
     height: 25vw;
     margin: 0 auto;
+    margin-bottom: 10%;
     opacity: 0;
     z-index: -1;
     transition: .5s;
@@ -1267,7 +1258,7 @@ section {
     transform: scale(1);
     transition: .5s;
     opacity: 1;
-    box-shadow: 0px 0px 30px 0px #7d50f9;
+    box-shadow: 0px 0px 15px 0px #000;
 }
 
 .swiper-slide-active>.portfolio-box::after {
@@ -1458,15 +1449,22 @@ section {
     flex-direction: row-reverse;
     justify-content: space-around;
 }
-
 .skill-bg {
     position: absolute;
+    display: flex;
+    width: 100%;
+    left: 0;
+    justify-content: center;
+}
+.factory {
+    position: relative;
     display: block;
     padding-top: 5%;
     flex: none;
+    white-space:nowrap;
 }
 
-.skill-box {
+.skill-gear {
     position: relative;
     display: inline-block;
     width: 200px;
@@ -1476,63 +1474,63 @@ section {
     transition: .3s;
 }
 
-.skill-box:nth-child(1) {
+.skill-gear:nth-child(1) {
     opacity: 0;
     top: -50px;
 }
 
-.skill-box:nth-child(2) {
+.skill-gear:nth-child(2) {
     opacity: 0;
     left: 50px;
 }
 
-.skill-box:nth-child(3) {
+.skill-gear:nth-child(3) {
     display: block;
     margin-left: 130px;
 }
 
-.skill-box:nth-child(4) {
+.skill-gear:nth-child(4) {
     opacity: 0;
     left: -50px;
 }
 
-.skill-box:nth-child(5) {
+.skill-gear:nth-child(5) {
     opacity: 0;
     top: 50px;
 }
 
-.wrap-active .skill-box:nth-child(1) {
+.wrap-active .skill-gear:nth-child(1) {
     transition: .5s 1s;
     opacity: 1;
     top: 0;
 }
 
-.wrap-active .skill-box:nth-child(2) {
+.wrap-active .skill-gear:nth-child(2) {
     transition: .5s 1s;
     opacity: 1;
     left: 0;
 }
 
-.wrap-active .skill-box:nth-child(3) {
+.wrap-active .skill-gear:nth-child(3) {
     animation: Bounce .5s .5s;
     transition: opacity .5s .5s;
     opacity: 1;
 }
 
-.wrap-active .skill-box:nth-child(4) {
+.wrap-active .skill-gear:nth-child(4) {
     transition: .5s 1s;
     opacity: 1;
     left: 0;
 }
 
-.wrap-active .skill-box:nth-child(5) {
+.wrap-active .skill-gear:nth-child(5) {
     transition: .5s 1s;
     opacity: 1;
     top: 0;
 }
 
 
-.skill-box::before {
+.skill-gear::before {
     content: '';
     position: absolute;
     left: 0;
@@ -1547,11 +1545,11 @@ section {
     animation: turn 5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
-.skill-box:nth-child(3):before {
+.skill-gear:nth-child(3):before {
     animation: turn-reverse 5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
-.skill-box::after {
+.skill-gear::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -1564,7 +1562,7 @@ section {
     z-index: -1;
 }
 
-.skill-box img {
+.skill-gear img {
     position: absolute;
     display: block;
     top: 50%;
@@ -1573,7 +1571,7 @@ section {
     width: 70px;
 }
 
-.skill-box:nth-child(5) img {
+.skill-gear:nth-child(5) img {
     border-radius: 50%;
     width: 125px !important;
 }
@@ -1632,7 +1630,8 @@ section {
     position: relative;
     display: block;
     font-weight: 100;
-    font-size: 17px;
+    font-size: 16px;
+    letter-spacing:0.075em;
     line-height: 20px;
     margin-bottom: 10px;
     padding-left: 10px;
@@ -1642,7 +1641,7 @@ section {
 
 
 .wrap-active .skill-txt-list {
-    transition: opacity .5s 1.5s;
+    transition: opacity .5s .5s;
     opacity: 1;
 }
 
@@ -1672,7 +1671,7 @@ section {
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    background-color: #7d50f9;
+    background-color: yellow;
     z-index: -1;
 }
 @media screen and (min-width: 1024px) and (max-height: 800px) {
@@ -1818,7 +1817,7 @@ section {
 
 .mbti-wrap {
     position: relative;
-    padding-top: 50px;
+    padding: 5% 0;
     display: flex;
     justify-content: space-between;
 }
@@ -2078,8 +2077,169 @@ section {
 .copy.pc {
     display: block;
 }
+.life {
+    opacity: 0;
+    transition: .3s;
+}
+.life .container {
+    width: 100%;
+    height: 100%;
+    padding: 5% 0;
+}
+.wrap-active .life {
+    opacity: 1;
+}
+.life-bg {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.life-bg-box {
+    position: relative;
+    top: -100%;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    color: #333;
+    background-color:#000;
+    transition: .1s .3s;
+}
+.life-bg-box span{
+    position: relative;
+    display: block;
+    font-size: 200px;
+}
+.life .tit {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5%;
+    color: #000;
+    display: block;
+    font-size: 50px;
+    text-align: center;
+}
 
+.wrap-active .life-bg-box {
+    top: 0;
+    opacity: 1;
+    transition: .3s;
+}
+.wrap-active .life-bg-box:nth-child(2) {
+    transition-delay: .15s;
+}
+.wrap-active .life-bg-box:nth-child(3) {
+    transition-delay: .3s;
+}
+.wrap-active .life-bg-box:nth-child(4) {
+    transition-delay: .45s;
+}
 
+.life-swiper {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+.life-box {
+    display: flex;
+    align-items: center;
+}
+.life-tit {
+    position: absolute;
+    left: -50px;
+    top: 10%;
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    padding: 0 5px;
+    border-radius: 10px;
+    background-color: #7d50f9;
+    z-index: 2;
+    opacity: 0;
+}
+.swiper-slide-active>.life-box .life-tit {
+    transition: .5s;
+    opacity: 1;
+    left: -20px;
+}
+.life-img {
+    position: relative;
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0px 0px 15px -4px #333;
+}
+.life-img img {
+    width: 100%;
+}
+.life-txt {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    color: #fff;
+    padding: 5% 5%;
+    font-size: 17px;
+    word-break: keep-all;
+    opacity: 0;
+    transition: .5s;
+}
+.life-txt::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: 0;
+    display: block;
+    width: 150%;
+    height: 100%;
+    background-color: #7d50f9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: -1;
+}
+.swiper-slide-active> .life-box .life-txt {
+    opacity: 1;
+}
+.small {
+    display: block;
+    font-size: 13px;
+    color: #ccc;
+}
+.sw-life-next {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    font-size: 30px;
+    color: #7d50f9;
+    padding-right: 30px;
+    z-index: 99;
+}
+.sw-life-next:hover {
+    transition: .3s;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.sw-life-next::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background:url('../images/life_arr2.png')no-repeat center;
+    background-size: contain;
+}
+.sw-life-next:hover::after {
+    transition: .3s;
+    right: -10px;
+}
 @media screen and (max-width: 1024px) {
     .bg {
         transition: none;
@@ -2135,10 +2295,6 @@ section {
     .all-menu-bt {
         display: block;
     }
-
-    .profile-swiper {
-        margin: 10%;
-    }
     
     .portfolio {
         overflow: visible;
@@ -2149,9 +2305,6 @@ section {
     }
     .portfolio-box {
         height: 35vw;
-    }
-    .port-change {
-        margin-bottom: 10%;
     }
     .portfolio .swiper-wrapper {
         padding-top: 12vh;
@@ -2173,9 +2326,9 @@ section {
     .skill-txt-list li b::after {
         background-color: #FF651E !important;
     }
-
+    
     .tit,
-    .skill-box:nth-child(3),
+    .skill-gear:nth-child(3),
     .skill-tit,
     .mbti-tit b {
         transition-delay: 0s !important;
@@ -2190,12 +2343,15 @@ section {
 
     .profile-photo,
     .portfolio-swiper,
-    .skill-box,
+    .skill-gear,
     .mbti-tit {
         transition-delay: 0s !important;
     }
     .skill-txt {
         padding: 0 5% 5%;
+    }
+    .wrap-active .skill-txt::after {
+        background-color: #fff;
     }
     .page-box {
         display: none;
@@ -2260,8 +2416,8 @@ section {
         margin-top: 0;
     }
     .copy {
-        left: 5px;
-        bottom: 0;
+        left: 10px;
+        bottom: 5px;
         font-size: 12px;
         transform: rotate(-90deg);
         transform-origin: left;
@@ -2282,7 +2438,12 @@ section {
         flex-direction: column;
         align-items: center;
     }
-
+    .wrap-slide {
+        height: 120%;
+    }
+    .wrap-1 {
+        height: 100%;
+    }
     .visual-photo {
         width: 500px;
         height: 500px;
@@ -2328,8 +2489,10 @@ section {
     .portfolio .container {
         top: 40%;
     }
-
-   .portfolio .swiper {
+    .port-change {
+        margin-bottom: 5%;
+    }
+    .portfolio .swiper {
         width: 35vw;
     }
     .portfolio-box {
@@ -2348,10 +2511,7 @@ section {
     .tit-mb {
         display: block;
         text-align: center;
-        margin-bottom: 10%;
-    }
-
-    .skill-bg {
+        margin-bottom: 15%;
     }
 
     .skill-wrap {
@@ -2401,9 +2561,6 @@ section {
 }
 
 @media screen and (max-width: 480px) {
-    .gnb .swiper-pagination-bullet {
-        font-size: 22px;
-    }
 
     /* .gotop {
         right: 20px;
@@ -2484,7 +2641,7 @@ section {
     .profile-left {
         padding: 0;
     }
-    .profile-left span {
+    .profile-txt span {
         font-size: 16px;
         line-height: 22px;
     }
@@ -2512,20 +2669,22 @@ section {
     .skill .container {
         padding: 0 10px !important;
     }
+    .factory {
+        transform: scale(.7);
+    }
 
     .skill-progress {
         flex-direction: column;
     }
     .skill-txt-list li {
         font-size: 14px;
+        letter-spacing: normal;
+        line-height: 18px;
     }
     .skill-progress-txt>span {
         width: 60px;
+        font-size: 12px;
     }
-    .skill-progress {
-        padding: 0 30px;
-    }
-
     .skill-stat {
         padding: 0;
     }
@@ -2545,12 +2704,6 @@ section {
 
     .all-menu {
         width: 150px;
-    }
-
-    
-
-    .link-txt {
-        display: none;
     }
 }
 
@@ -2585,7 +2738,7 @@ section {
         padding: 0 10%;
     }
 
-    .profile-left span {
+    .profile-txt span {
         font-size: 17px;
         line-height: 25px;
     }
@@ -2594,46 +2747,12 @@ section {
         width: 70%;
     }
 
-    .skill-box {
-        width: 70px;
-    }
-
-    .skill-box::before {
-        width: 94px;
-        left: -12px;
-    }
-
-    .skill-box::after {
-        width: 65px;
-        height: 65px;
-    }
-
-    .skill-box img {
-        width: 40px;
-    }
-
-    .skill-box:last-child img {
-        width: 65px !important;
-    }
-
     .wrap-4 {
         padding-top: 70px;
     }
 
     .skill-progress {
         padding-left: 10px;
-    }
-
-    .skill-box:nth-child(4) {
-        margin-right: 34px !important;
-    }
-
-    .skill-box:nth-child(n + 4) {
-        margin-top: -70px !important;
-    }
-
-    .skill-box:nth-child(2) {
-        margin: 0 34px !important;
     }
 
     .mbti .container {
@@ -2663,6 +2782,7 @@ section {
 
     .contact {
         height: 70px;
+        bottom:3%;
     }
 
     .contact:hover {
@@ -2680,9 +2800,10 @@ section {
         width: 45px;
         height: 45px;
     }
-
     .link-box {
+        width: 70px;
+    }
+    .link-box img{
         width: 35px;
-        height: 35px;
     }
 }
