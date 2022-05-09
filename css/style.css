@@ -1251,7 +1251,7 @@ section {
     overflow: hidden;
     width: 100%;
     height: 100%;
-    background: #7d50f9;
+    background-color: #000;
     border: 3px solid #000;
     transform: scale(.7);
     z-index: -1;
