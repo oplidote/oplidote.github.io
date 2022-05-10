@@ -436,12 +436,15 @@ body {
 .fs-20 {
     font-size: 20px;
 }
+
 .blue {
     color: blue !important;
 }
+
 .red {
     color: red !important;
 }
+
 .ani-none {
     animation: none !important;
 }
@@ -1024,17 +1027,20 @@ section {
 .tit {
     font-size: 40px;
     opacity: 0;
-    
+
 }
+
 .wrap-active .tit {
     position: relative;
     opacity: 1;
     transition: opacity .5s .5s;
     animation: Bounce .5s .5s;
 }
+
 .tit span {
     position: relative;
 }
+
 .tit span::after {
     content: '';
     position: absolute;
@@ -1348,11 +1354,8 @@ section {
     position: absolute;
     left: 50%;
     top: 50%;
-    padding: 5px;
     transform: translate(-50%, -50%);
     display: block;
-    font-size: 15px;
-    color: #fff;
     z-index: 1;
     border-radius: 8px;
     white-space: nowrap;
@@ -1362,6 +1365,30 @@ section {
 .portfolio-box:hover .box-hover {
     transition: .3s;
     opacity: 1;
+}
+
+.hover-bt {
+    position: relative;
+    display: block;
+    font-size: 25px;
+    padding: 5px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    text-align: center;
+    
+    margin: 0 auto;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+.box-hover:hover .hover-bt {
+    font-size: 20px;
+}
+.hover-bt:hover {
+    font-size: 35px !important;
 }
 
 .port-box-img {
@@ -1642,9 +1669,7 @@ section {
 .skill-txt-list li {
     position: relative;
     display: block;
-    font-weight: 100;
     font-size: 16px;
-    letter-spacing: 0.075em;
     line-height: 20px;
     margin-bottom: 10px;
     padding-left: 10px;
@@ -1981,10 +2006,12 @@ section {
     font-size: 15px;
     color: #777;
 }
+
 .wrap-active .esfp {
     transition: .3s 1s;
     opacity: 1;
 }
+
 .esfp b {
     font-size: 25px;
     padding-right: 10px;
@@ -2012,6 +2039,7 @@ section {
     border-radius: 50%;
     background-color: #303033;
 }
+
 .copy {
     position: absolute;
     left: 50%;
@@ -2294,12 +2322,15 @@ section {
     .progressbar-text {
         color: #fff !important;
     }
+
     .skill-txt-list li b {
         color: #ffd65c;
     }
+
     .skill-txt-list li::before {
         background-color: #fff;
     }
+
     .skill .tit span::after {
         background-color: #ffd65c !important;
     }
@@ -2526,12 +2557,15 @@ section {
     .ps {
         margin-top: 10px !important;
     }
+
     .life .tit {
         margin-bottom: 12%;
     }
+
     .life-swiper {
         text-align: center;
     }
+
     .sw-life-next:hover {
         padding: 0;
         padding-right: 30px;
@@ -2540,6 +2574,7 @@ section {
     .sw-life-next:hover::after {
         right: 0;
     }
+
     @media screen and (min-width: 570px) {
         .life-tit {
             left: 50% !important;
@@ -2585,6 +2620,7 @@ section {
             color: #fff;
         }
     }
+
     .life-img {
         width: 100%;
     }
@@ -2603,39 +2639,48 @@ section {
     .portfolio-box {
         height: 45vw;
     }
+
     .mbti-wrap {
         flex-direction: column;
     }
+
     .mbti-box {
         margin: 15px;
     }
-    
+
     .mbti-stat {
         margin-bottom: 5%;
     }
+
     .mbti-txt p {
         font-size: 14px;
         margin-bottom: 10px;
     }
+
     .life-box {
         flex-direction: column;
     }
+
     .sw-life-next {
         position: relative;
         display: inline-block;
         color: #303033;
     }
+
     .life-tit {
         font-size: 30px;
     }
+
     .life-txt {
         color: #000;
         padding: 10%;
         line-height: 30px;
     }
+
     .life-txt::before {
         content: none;
     }
+
     .small {
         color: #777;
     }
@@ -2782,7 +2827,7 @@ section {
         padding: 0;
     }
 
-    
+
     .life-swiper {
         width: 80%;
     }
@@ -2894,8 +2939,9 @@ section {
     .link-box {
         width: 70px;
     }
+
     .link-box img {
         width: 35px;
     }
-    
+
 }
