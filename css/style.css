@@ -2033,7 +2033,6 @@ section {
 
 .life .container {
     width: 100%;
-    height: 100%;
     padding: 5% 0;
 }
 
@@ -2070,7 +2069,7 @@ section {
 .life .tit {
     position: relative;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
     color: #000;
     display: block;
     text-align: center;
@@ -2127,7 +2126,8 @@ section {
 
 .life-img {
     position: relative;
-    width: 100%;
+    width: 50%;
+    flex: none;
     display: block;
     border-radius: 50%;
     overflow: hidden;
@@ -2584,6 +2584,9 @@ section {
             transform: translateX(50%);
             color: #fff;
         }
+    }
+    .life-img {
+        width: 100%;
     }
 }
 
