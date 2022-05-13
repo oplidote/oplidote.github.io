@@ -37,6 +37,8 @@ $(document).ready(function () {
     let $header = $('.header');
     let $swiper_wrapper = $('.swiper-wrapper');
     let $wrap_slide = $('.wrap-slide');
+    let $skill_box = $('.skill-box');
+    let $skill_txtbox = $('.skill-txtbox');
 
     // 전체 메뉴 버튼
     let $all_menu_bt = $('.all-menu-bt');
@@ -219,37 +221,46 @@ $(document).ready(function () {
     });
     // 스킬 프로그레스 바 
     function stat() {
-        let htmlbar = new ProgressBar.Line(htmlstat, {
+        let htmlbar = new ProgressBar.Circle(htmlstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 200,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
+                color: '#FF651E',
                 width: 5
             },
             to: {
@@ -257,37 +268,46 @@ $(document).ready(function () {
                 width: 5,
             },
         });
-        let cssbar = new ProgressBar.Line(cssstat, {
+        let cssbar = new ProgressBar.Circle(cssstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1300,
             delay: 300,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
+                color: '#379ad6',
                 width: 5
             },
             to: {
@@ -295,37 +315,46 @@ $(document).ready(function () {
                 width: 5
             },
         });
-        let jsbar = new ProgressBar.Line(jsstat, {
+        let jsbar = new ProgressBar.Circle(jsstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 400,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
+                color: '#FFE100',
                 width: 5
             },
             to: {
@@ -333,75 +362,46 @@ $(document).ready(function () {
                 width: 5
             },
         });
-        let jquerybar = new ProgressBar.Line(jquerystat, {
-            strokeWidth: 5,
-            easing: 'easeInOut',
-            duration: 1400,
-            delay: 500,
-            color: '#f1fc5d',
-            trailColor: '#959595',
-            trailWidth: 0,
-            svgStyle: {
-                width: '100%',
-                height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
-            },
-            text: {
-                style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
-                    position: 'absolute',
-                    fontSize: '16px',
-                    letterSpacing: '-1px',
-                    top:'0',
-                },
-                autoStyleContainer: false,
-            },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
-            },
-            from: {
-                color: '#aaa',
-                width: 5
-            },
-            to: {
-                color: '#ed4646',
-                width: 5
-            },
-        });
-        let vuebar = new ProgressBar.Line(vuestat, {
+        let vuebar = new ProgressBar.Circle(vuestat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
+                color: '#00c180',
                 width: 5
             },
             to: {
@@ -409,37 +409,46 @@ $(document).ready(function () {
                 width: 5
             },
         });
-        let gitbar = new ProgressBar.Line(gitstat, {
+        let gitbar = new ProgressBar.Circle(gitstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
+                color: '#1b1d21',
                 width: 5
             },
             to: {
@@ -447,37 +456,46 @@ $(document).ready(function () {
                 width: 5
             },
         });
-        let bootbar = new ProgressBar.Line(bootstat, {
+        let bootbar = new ProgressBar.Circle(bootstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
+                color: '#9f72fc',
                 width: 5
             },
             to: {
@@ -485,75 +503,47 @@ $(document).ready(function () {
                 width: 5
             },
         });
-        let cbar = new ProgressBar.Line(cstat, {
+
+        let dbbar = new ProgressBar.Circle(dbstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
-                width: 5
-            },
-            to: {
-                color: '#4a8bc6',
-                width: 5
-            },
-        });
-        let dbbar = new ProgressBar.Line(dbstat, {
-            strokeWidth: 5,
-            easing: 'easeInOut',
-            duration: 1400,
-            delay: 600,
-            color: '#f1fc5d',
-            trailColor: '#959595',
-            trailWidth: 0,
-            svgStyle: {
-                width: '100%',
-                height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
-            },
-            text: {
-                style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
-                    position: 'absolute',
-                    fontSize: '16px',
-                    letterSpacing: '-1px',
-                    top:'0',
-                },
-                autoStyleContainer: false,
-            },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
-            },
-            from: {
-                color: '#aaa',
+                color: '#1b2955',
                 width: 5
             },
             to: {
@@ -561,37 +551,46 @@ $(document).ready(function () {
                 width: 5
             },
         });
-        let phpbar = new ProgressBar.Line(phpstat, {
+        let phpbar = new ProgressBar.Circle(phpstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#f1fc5d',
-            trailColor: '#959595',
+            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '4px',
-                border:'3px solid #dbdee3'
+                borderRadius: '50%',
             },
             text: {
                 style: {
-                    color:'#303033',
-                    whiteSpace:'nowrap',
-                    paddingLeft: '5px',
+                    color: '#000',
+                    whiteSpace: 'nowrap',
                     position: 'absolute',
-                    fontSize: '16px',
+                    cursor: 'default',
+                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    top: '60%',
+                    fontSize: '20px',
                     letterSpacing: '-1px',
-                    top:'0',
                 },
                 autoStyleContainer: false,
             },
-            step: (state, bar) => {
-                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
             },
             from: {
-                color: '#aaa',
+                color: '#8b93bb',
                 width: 5
             },
             to: {
@@ -602,14 +601,19 @@ $(document).ready(function () {
         htmlbar.animate(0.97); // Number from 0.0 to 1.0
         cssbar.animate(0.97); // Number from 0.0 to 1.0
         jsbar.animate(0.9); // Number from 0.0 to 1.0
-        jquerybar.animate(0.95); // Number from 0.0 to 1.0
         vuebar.animate(0.75); // Number from 0.0 to 1.0
         gitbar.animate(0.70); // Number from 0.0 to 1.0
         bootbar.animate(0.70); // Number from 0.0 to 1.0
-        cbar.animate(0.50); // Number from 0.0 to 1.0
         dbbar.animate(0.40); // Number from 0.0 to 1.0
         phpbar.animate(0.20); // Number from 0.0 to 1.0
     };
+    $.each($skill_box,function(){
+        $(this).mousemove(function (e) {
+            var offset = $(this).offset();
+            $(this).find($skill_txtbox).css('left',`${Math.ceil(e.pageX - offset.left)}px`);
+            $(this).find($skill_txtbox).css('top',`${Math.ceil(e.pageY - offset.top + 20)}px`);
+        });
+    })
     // MBTI 프로그레스 바 
     function mbti() {
         let e_bar = new ProgressBar.Line(e, {
