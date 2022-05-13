@@ -224,23 +224,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 200,
-            color: '#FF651E',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'97%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -261,23 +262,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1300,
             delay: 300,
-            color: '#379ad6',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'97%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -298,23 +300,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 400,
-            color: '#FFE100',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
-                    position: 'absolute',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft:'10px',
-                    left:'90%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    paddingLeft: '5px',
+                    position: 'absolute',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -335,23 +338,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 500,
-            color: '#ed4646',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'95%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -372,23 +376,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#00c180',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'75%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -409,23 +414,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#1b1d21',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'70%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -446,23 +452,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#9f72fc',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'70%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -478,29 +485,67 @@ $(document).ready(function () {
                 width: 5
             },
         });
-        
+        let cbar = new ProgressBar.Line(cstat, {
+            strokeWidth: 5,
+            easing: 'easeInOut',
+            duration: 1400,
+            delay: 600,
+            color: '#f1fc5d',
+            trailColor: '#959595',
+            trailWidth: 0,
+            svgStyle: {
+                width: '100%',
+                height: '100%',
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
+            },
+            text: {
+                style: {
+                    color:'#303033',
+                    whiteSpace:'nowrap',
+                    paddingLeft: '5px',
+                    position: 'absolute',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
+                },
+                autoStyleContainer: false,
+            },
+            step: (state, bar) => {
+                bar.setText((Math.round(bar.value() * 100)) + ' %');
+            },
+            from: {
+                color: '#aaa',
+                width: 5
+            },
+            to: {
+                color: '#4a8bc6',
+                width: 5
+            },
+        });
         let dbbar = new ProgressBar.Line(dbstat, {
             strokeWidth: 5,
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#1b2955',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'40%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -521,23 +566,24 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            color: '#8b93bb',
-            trailColor: 'transparent',
+            color: '#f1fc5d',
+            trailColor: '#959595',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
-                borderRadius: '3px'
+                borderRadius: '4px',
+                border:'3px solid #dbdee3'
             },
             text: {
                 style: {
-                    color:'#000',
+                    color:'#303033',
                     whiteSpace:'nowrap',
-                    paddingLeft: '10px',
+                    paddingLeft: '5px',
                     position: 'absolute',
-                    left:'20%',
-                    top:'50%',
-                    transform:'translateY(-50%)',
+                    fontSize: '16px',
+                    letterSpacing: '-1px',
+                    top:'0',
                 },
                 autoStyleContainer: false,
             },
@@ -560,6 +606,7 @@ $(document).ready(function () {
         vuebar.animate(0.75); // Number from 0.0 to 1.0
         gitbar.animate(0.70); // Number from 0.0 to 1.0
         bootbar.animate(0.70); // Number from 0.0 to 1.0
+        cbar.animate(0.50); // Number from 0.0 to 1.0
         dbbar.animate(0.40); // Number from 0.0 to 1.0
         phpbar.animate(0.20); // Number from 0.0 to 1.0
     };
