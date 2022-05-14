@@ -30,7 +30,7 @@ $(document).ready(function () {
     // })
 
     // 변수
-    let $sticker2_img = $('.sticker2 img');
+    let $sticker_img = $('.sticker img');
     let $bg = $('.bg');
     let $field = $('.field');
     let prevIndex = 0; // 이전 슬라이드번호
@@ -76,9 +76,9 @@ $(document).ready(function () {
                         $('.page-txt').each(function (index, item) {
                             $(this).rotate(innerAngle - (60 * index));
                         });
-                        $sticker2_img.rotate(innerAngle);
-                        $sticker2_img.eq(0).rotate(-innerAngle);
-                        $sticker2_img.eq(2).rotate(-innerAngle);
+                        $sticker_img.rotate(innerAngle);
+                        $sticker_img.eq(0).rotate(-innerAngle);
+                        $sticker_img.eq(2).rotate(-innerAngle);
                         $('.wrap-slide').removeClass('wrap-active');
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
                         if (this.realIndex == 0) {
@@ -232,6 +232,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -279,6 +280,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -326,6 +328,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -373,6 +376,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -420,6 +424,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -467,6 +472,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -515,6 +521,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -562,6 +569,7 @@ $(document).ready(function () {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
+                backgroundColor:''
             },
             text: {
                 style: {
@@ -789,5 +797,5 @@ $(document).ready(function () {
         $header.fadeIn(300);
     }).resize();
     wrap();
-    $sticker2_img.rotate(0);
+    $sticker_img.rotate(0);
 })

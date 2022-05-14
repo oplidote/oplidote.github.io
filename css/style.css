@@ -304,7 +304,7 @@ body {
     display: block;
     width: 100%;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 5% 5% 0 5%;
 }
 
 .title {
@@ -321,7 +321,7 @@ body {
     display: block;
     width: calc(100vw - 15%);
     height: calc(100vh - 100px);
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0px 0px 35px 10px rgba(0, 0, 0, 0.4);
     border-radius: 30px;
     overflow: hidden;
@@ -344,82 +344,50 @@ body {
     transition: 1s;
 }
 
-.sticker {
-    position: absolute;
-    background: url('../images/cyborg-gears.png')no-repeat center;
-    background-size: contain;
-}
 
-.sticker2 {
+.sticker {
     position: absolute;
     display: block;
     transition: 1.5s;
     opacity: 1;
 }
 
-.sticker2 img {
+.sticker img {
     width: 100%;
-    opacity: .08;
     transition: 1s;
 }
 
-.inner-gear1 img {
+.gear1 img {
     transform: rotate(180deg);
 }
 
-.inner-gear2 img {
+.gear2 img {
     transform: rotate(-180deg);
 }
 
-.inner-gear3 img {
+.gear3 img {
     transform: rotate(180deg);
 }
 
-.inner-gear4 img {
-    transform: rotate(-180deg);
-}
-
-
-.gear-1 {
-    width: 800px;
-    height: 800px;
-    top: -350px;
-    left: -300px;
-}
-
-.gear-2 {
-    width: 300px;
-    height: 300px;
-    bottom: -170px;
-    left: 300px;
-}
-
-.inner-gear1 {
+.gear1 {
     right: 60%;
-    top: -10%;
-    width: 300px;
-    height: 300px;
+    top: -35%;
+    width: 20vw;
+    height: 20vw;
 }
 
-.inner-gear2 {
-    left: -300px;
-    bottom: -300px;
-    width: 600px;
-    height: 600px;
-}
-
-.inner-gear3 {
-    right: -600px;
+.gear2 {
+    right: -30%;
     top: 0;
-    width: 800px;
-    height: 800px;
+    width: 40vw;
+    height: 40vw;
 }
 
-.inner-gear4 {
-    top: 30%;
-    left: 60%;
-    width: 100px;
-    height: 100px;
+.gear3 {
+    left: -40%;
+    top: 50%;
+    width: 90vw;
+    height: 90vw;
 }
 
 .icon {
@@ -678,10 +646,10 @@ body {
 .logo {
     position: relative;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 15px;
     display: block;
-    width: 160px;
-    height: 80px;
+    width: 140px;
+    height: 62px;
     background: url('../images/mylogo.png')no-repeat center;
     background-size: contain;
 
@@ -875,7 +843,7 @@ section {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    box-shadow: 0px 0px 30px 0px #333;
+    box-shadow: 0px 0px 10px 0px #333;
     background-color: #7d50f9;
     overflow: hidden;
     flex: none;
@@ -935,15 +903,16 @@ section {
 .visual-txt b {
     font-size: 40px;
     color: #fff;
-    padding: 5px 10px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    line-height: 40px;
+    border-radius: 40px;
     background-color: #7d50f9;
 }
 
 .visual-txt p {
     font-weight: bold;
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 50px;
     font-size: 40px;
     font-family: 'Goldman', 'Cairo';
 }
@@ -1011,9 +980,6 @@ section {
 .wrap-active .arrow {
     animation: op 1s .4s cubic-bezier(0, 0, 1, 1) infinite;
 }
-.profile {
-    background-color: #7d50f9;
-}
 
 .profile .container {
     display: flex;
@@ -1028,16 +994,19 @@ section {
 }
 
 .tit {
+    position: fixed ;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    top: 10%;
     font-size: 40px;
     opacity: 0;
-
 }
 
 .wrap-active .tit {
-    position: relative;
     opacity: 1;
     transition: opacity .5s .5s;
-    animation: Bounce .5s .5s;
+    animation: Bounceemt .5s .5s;
 }
 
 .tit span {
@@ -1056,18 +1025,18 @@ section {
     background-color: #7d50f9;
     z-index: -1;
 }
-
+.profile-tit {
+}
 .profile-txt {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
     font-size: 18px;
     color: #505055;
     opacity: 0;
     word-break: keep-all;
-    padding: 10% 0;
-    flex-grow: 1;
-    justify-content: space-around;
 }
 
 .wrap-active .profile-txt {
@@ -1079,6 +1048,7 @@ section {
     position: relative;
     display: block;
     line-height: 25px;
+    margin-bottom: 5%;
 }
 
 .profile-txt span::before {
@@ -1094,10 +1064,9 @@ section {
 }
 
 .point {
-    color: yellow;
+    color: #7d50f9;
 }
-.point::after {
-}
+
 .profile-right {
     position: relative;
     display: block;
@@ -1108,10 +1077,11 @@ section {
 .profile-photo {
     position: relative;
     display: block;
-    width: 90%;
+    width: 80%;
+    max-width: 400px;
     margin: 0 auto;
     object-fit: cover;
-    box-shadow: 0px 0px 20px 0px #000;
+    box-shadow: 0px 0px 10px 0px #000;
     opacity: 0;
     border-radius: 50%;
     transition: .5s;
@@ -1134,6 +1104,9 @@ section {
 
 .wrap-active .portfolio {
     opacity: 1;
+}
+.portfolio .container {
+    padding-top: 0;
 }
 
 .portfolio-tit {
@@ -1225,22 +1198,28 @@ section {
     background-color: red;
 }
 
-.portfolio .swiper {
-    position: relative;
-    display: block;
+.portfolio-swiper {
+    position: absolute !important;
+    left: 50%;
+    transform: translateX(-50%);
     width: 20vw;
     height: 25vw;
     margin: 0 auto;
-    margin-bottom: 10%;
     opacity: 0;
     z-index: -1;
     transition: .5s;
 }
 
-.portfolio-swiper {
-    position: absolute !important;
-    left: 50%;
-    transform: translateX(-50%);
+.project-swiper {
+    position: relative;
+    display: block;
+    width: 30vw;
+    height: 16.5vw;
+    margin: 0 auto;
+    margin-bottom: 15vw;
+    opacity: 0;
+    z-index: -1;
+    transition: .5s;
 }
 
 .clone-on .portfolio-swiper {
@@ -1277,7 +1256,7 @@ section {
     box-shadow: 0px 0px 15px 0px #000;
 }
 
-.swiper-slide-active>.portfolio-box::after {
+/* .swiper-slide-active>.portfolio-box::after {
     content: '';
     position: absolute;
     left: 0;
@@ -1287,7 +1266,7 @@ section {
     height: 100%;
     opacity: 0;
     background-color: #000;
-}
+} */
 
 .swiper-slide-active>.portfolio-box:hover::after {
     transition: .3s;
@@ -1356,51 +1335,39 @@ section {
     background-size: contain;
 }
 
-.box-hover {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    z-index: 1;
-    border-radius: 8px;
+.port-link {
+    position: relative;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
     white-space: nowrap;
-    opacity: 0;
 }
 
-.portfolio-box:hover .box-hover {
-    transition: .3s;
-    opacity: 1;
-}
-
-.hover-bt {
+.port-link-bt {
     position: relative;
     display: block;
     font-size: 25px;
-    padding: 5px;
-    width: 150px;
-    border-radius: 10px;
+    padding: 5px 10px;
     background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid #fff;
     color: #fff;
-    border: 0;
     text-align: center;
-
-    margin: 0 auto;
-    padding: 20px 0;
     cursor: pointer;
     transition: .3s;
 }
-
-.box-hover:hover .hover-bt {
+.port-link-bt:last-child {
+    margin-left: 30px;
     font-size: 20px;
+    line-height: 25px;
 }
-
-.hover-bt:hover {
-    font-size: 35px !important;
+.port-link-bt:hover {
+    transform: scale(1.1);
 }
 
 .port-box-img {
     position: absolute;
+    top: 1px;
     display: block;
     width: 100%;
     background-color: #000;
@@ -1421,128 +1388,136 @@ section {
 
 .port-txt-box {
     position: absolute;
-    bottom: -100%;
-    padding: 5% 0;
+    display: block;
+    padding: 5%;
+    padding-top: 25%;
     width: 100%;
-    padding-left: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.project-swiper .port-txt-box {
+    padding-top: 5%;
+}
+.project-swiper .port-box-tit {
+    height: 15%;
+}
+.project-swiper .port-link {
+    margin-top: 5%;
 }
 
 .wrap-active .swiper-slide-active>.portfolio-box .port-txt-box {
     transition: .3s .3s;
     opacity: 1;
-    bottom: 0;
 }
 
 .port-box-tit {
     position: relative;
-    display: inline-block;
-    font-size: 22px;
+    display: block;
+    text-align: center;
+    height: 30%;
+    font-size: 25px;
     color: #fff;
     border-radius: 5px;
     margin-bottom: 5%;
 }
 
-.port-box-tit::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 10px;
-    opacity: .5;
-    border-radius: 5px;
-    background-color: #000;
-    z-index: -1;
-}
 
 .work-time {
     display: block;
     font-size: 15px;
+    text-align: center;
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .work-type {
     display: block;
     color: #fff;
     font-size: 15px;
-    margin-bottom: 5px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .port-tool-box {
     position: relative;
     display: flex;
-    justify-content: space-around;
-    margin-left: -5%;
+    justify-content: space-between;
 }
 
 
 .tag {
     position: relative;
     display: inline-block;
-    color: #000;
+    color: #fff;
     padding: 5px 5px;
     font-size: 13px;
     font-weight: bold;
     text-align: center;
     border-radius: 4px;
 }
-.skill-tit {
-    text-align: center;
-    margin-bottom: 5%;
+.skill .container {
+    padding-top: 10%;
 }
 .skill-wrap {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4,25%);
-    grid-template-rows: repeat(2,50%);
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 50%);
     opacity: 0;
     transition: .3s;
 }
+
 .wrap-active .skill-wrap {
     opacity: 1;
 }
+
 .skill-box {
     display: flex;
     margin: 15%;
     justify-content: center;
 }
+
 .skill-prg {
     display: flex;
     flex: none;
     justify-content: center;
     width: 200px;
     height: 200px;
-    
+
 }
-.skill-box-tit{
+
+.skill-box-tit {
     position: absolute;
     display: block;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-size: 30px;
     color: #000;
     white-space: nowrap;
     cursor: default;
 }
+
 .skill-circle {
     position: absolute;
     display: block;
     height: 200px;
     width: 200px;
 }
+
 .skill-box svg {
     transition: .3s;
     box-shadow: 0px 0px 10px 0px;
 }
+
 .skill-box:hover svg {
     transform: scale(1.1);
     z-index: 1;
 }
+
 .skill-txtbox {
-    position:absolute;
+    position: absolute;
     display: block;
     padding: 10px 15px;
     left: 0;
@@ -1554,11 +1529,13 @@ section {
     border-radius: 10px;
     transition: opacity .3s;
 }
+
 .skill-box:hover .skill-txtbox {
     z-index: 1;
     opacity: 1;
     visibility: visible;
 }
+
 .skill-txt {
     position: relative;
     display: inline-block;
@@ -1568,11 +1545,12 @@ section {
     line-height: 20px;
     font-size: 14px;
 }
+
 .skill-txt::after {
     content: '';
     position: absolute;
     top: 50%;
-    transform:translateY(-50%);
+    transform: translateY(-50%);
     left: -5px;
     display: block;
     width: 6px;
@@ -1581,13 +1559,6 @@ section {
     background-color: rgb(255, 214, 255);
 }
 
-
-.mbti-tit span {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    color: #303033;
-}
 
 .wrap-active .mbti-tit span {
     opacity: 1;
@@ -1600,15 +1571,6 @@ section {
     display: flex;
     justify-content: space-between;
 }
-.mbti-tit {
-    position: relative;
-    display: block;
-    padding-bottom: 10%;
-    text-align: center;
-    opacity: 0;
-    color: #aaa;
-}
-
 .wrap-active .mbti-tit {
     opacity: 1;
     transition: opacity .5s .5s;
@@ -1854,6 +1816,7 @@ section {
     color: #000;
     word-break: keep-all;
 }
+
 .mbti-txt p::before {
     content: '';
     position: absolute;
@@ -1920,15 +1883,6 @@ section {
     font-size: 200px;
 }
 
-.life .tit {
-    position: relative;
-    width: 100%;
-    margin-bottom: 5%;
-    color: #000;
-    display: block;
-    text-align: center;
-}
-
 .wrap-active .life-bg-box {
     top: 0;
     opacity: 1;
@@ -1958,7 +1912,7 @@ section {
     align-items: center;
 }
 
-.life-tit {
+.life-box-tit {
     position: absolute;
     left: -50px;
     top: 10%;
@@ -1980,7 +1934,7 @@ section {
 
 .life-img {
     position: relative;
-    width: 50%;
+    width: 45%;
     flex: none;
     display: block;
     border-radius: 50%;
@@ -2071,36 +2025,27 @@ section {
         transform: scale(.8);
     }
 
-    .sticker {
-        display: none;
-    }
 
-    .inner-gear1 {}
+    .gear1 {}
 
-    .inner-gear2 {
+    .gear2 {
         bottom: -400px;
 
     }
 
-    .inner-gear3 {
-        top: 700px;
+    .gear3 {
+        top: 150%;
     }
 
-    .inner-gear4 {}
-
-    .inner-gear1 img {
+    .gear1 img {
         transform: rotate(180deg);
     }
 
-    .inner-gear2 img {
+    .gear2 img {
         transform: rotate(-180deg);
     }
 
-    .inner-gear3 img {
-        transform: rotate(180deg);
-    }
-
-    .inner-gear4 img {
+    .gear3 img {
         transform: rotate(180deg);
     }
 
@@ -2157,7 +2102,6 @@ section {
 
     .profile-txt {
         transition-delay: .3s !important;
-        color: #fff;
     }
 
     .profile-photo,
@@ -2274,7 +2218,6 @@ section {
     }
 
     .profile-left {
-        flex: 1;
         text-align: center;
     }
 
@@ -2322,23 +2265,29 @@ section {
         width: 100%;
         height: auto;
     }
+
     .skill-prg {
         width: 150px;
         height: 150px;
     }
+
     .skill-circle {
         width: 150px;
         height: 150px;
     }
+
     .skill-box-tit {
         font-size: 22px;
     }
+
     .skill-txtbox {
         transform: translateX(-50%);
     }
+
     .skill-txt {
         font-size: 12px;
     }
+
     .life .tit {
         margin-bottom: 12%;
     }
@@ -2476,26 +2425,22 @@ section {
         height: 130%;
     }
 
-    .inner-gear1 {}
+    .gear1 {}
 
-    .inner-gear2 {
+    .gear2 {
         bottom: -300px;
         left: -150px;
         width: 400px;
         height: 400px;
     }
 
-    .inner-gear3 {
+    .gear3 {
         top: 1200px;
         right: -300px;
         width: 600px;
         height: 600px;
     }
 
-    .inner-gear4 {
-        top: 50%;
-        left: 80%;
-    }
 
     .logo {
         width: 120px;
@@ -2560,7 +2505,7 @@ section {
     }
 
     .portfolio-box {
-        height: 55vw;
+        height: 70vw;
     }
 
     .port-change {
