@@ -421,82 +421,36 @@ body {
     height: auto !important;
 }
 
-
-
-/* 고정 help 메뉴 */
-.fix-menu {
-    position: fixed;
-    right: 0;
-    bottom: 300px;
-    display: block;
-    z-index: 9999;
-}
-
-.fix-menu li {
-    position: relative;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.fix-menu a {
-    position: relative;
-    display: block;
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    transition: background-color 0.3s;
-}
-
-.fix-menu a:hover {
-    background-color: #f00;
-}
-
 /* 고정메뉴 */
-.fix-content {
+.contact-nav {
     position: fixed;
-    left: calc(50% + 450px);
-    top: 50%;
-    transform: translateY(-50%);
-    display: block;
-    z-index: 9999;
-}
-
-.fix-content li {
-    position: relative;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.fix-content a {
-    position: relative;
-    display: block;
-    width: 20px;
-    height: 20px;
-    font-size: 0;
-    border-radius: 50%;
-    background-color: #000;
-    transition: background-color 0.3s;
-}
-
-.fix-content a:hover {
-    background-color: #f00;
-}
-
-.contact {
-    position: fixed;
-    display: flex;
-    flex-direction: column-reverse;
     right: 5%;
     bottom: 5%;
+    z-index: 999;
+    transition: .3s;
+}
+.nav-off {
+    transition: .3s;
+    transform: translate(50%,50%);
+    right: 50%;
+    bottom: 50%;
+}
+.contact-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
     background-color: #7d50f9;
     border-radius: 45px;
-    z-index: 999;
-    transition: .3s ease;
+    width: 90px;
     height: 90px;
     overflow: hidden;
+    transition: height .3s ease;
 }
-
-.contact:hover {
+.nav-off.contact-on .contact-wrap {
+    transition: none;
+    height: 90px ;
+}
+.contact-on .contact-wrap {
     height: 370px;
 }
 
@@ -516,19 +470,24 @@ body {
     transition: .3s;
 }
 
-.contact:hover .contact-bt {
+.contact-on .contact-bt {
     transform: rotateY(0);
 }
-
+.nav-off.contact-on .contact-bt {
+    transform: rotateY(180deg);
+}
 .contact-bt span {
     transition: .3s;
     opacity: 0;
     cursor: none;
 }
 
-.contact:hover .contact-bt span {
+.contact-on .contact-bt span {
     transition: .3s;
     opacity: 1;
+}
+.nav-off.contact-on .contact-bt span {
+    opacity: 0;
 }
 
 .contact-bt img {
@@ -541,7 +500,7 @@ body {
     transition: .3s;
 }
 
-.contact:hover .contact-bt img {
+.contact-on .contact-bt img {
     opacity: 0;
 }
 
@@ -554,7 +513,7 @@ body {
     opacity: 0;
 }
 
-.contact:hover .contact-link {
+.contact-on .contact-link {
     opacity: 1;
 }
 
@@ -581,23 +540,23 @@ body {
     transition: .3s;
 }
 
-.contact:hover .link-box {
+.contact-on .link-box {
     transition: .3s .3s;
     animation: Bounce .3s .3s;
     opacity: 1;
 }
 
-.contact:hover .link-box:nth-child(2) {
+.contact-on .link-box:nth-child(2) {
     animation-delay: .35s !important;
     transition-delay: .35s !important;
 }
 
-.contact:hover .link-box:nth-child(3) {
+.contact-on .link-box:nth-child(3) {
     animation-delay: .4s !important;
     transition-delay: .4s !important;
 }
 
-.contact:hover .link-box:nth-child(4) {
+.contact-on .link-box:nth-child(4) {
     animation-delay: .45s !important;
     transition-delay: .45s !important;
 }
@@ -2018,6 +1977,23 @@ section {
     transition: .3s;
     right: -10px;
 }
+.contact {
+    position: relative;
+    display: block;
+    background-image: radial-gradient(circle farthest-corner at center center, #7d50f9 0%, #7d50f9 50%, transparent 50.1%);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 0%;
+    z-index: 9999;
+}
+.wrap-active .contact {
+    transition: .5s .3s;
+    background-size: 200% 200%;
+}
+.wrap-active .contact-tit {
+    transition-delay: .7s;
+    color: #fff;
+}
 
 @media screen and (max-width: 1024px) {
     .bg {
@@ -2609,12 +2585,12 @@ section {
         margin-top: 15px;
     }
 
-    .contact {
+    .contac-nav {
         height: 70px;
         bottom: 3%;
     }
 
-    .contact:hover {
+    .contac-nav:hover {
         height: 300px;
     }
 

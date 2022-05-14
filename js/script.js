@@ -39,6 +39,8 @@ $(document).ready(function () {
     let $wrap_slide = $('.wrap-slide');
     let $skill_box = $('.skill-box');
     let $skill_txtbox = $('.skill-txtbox');
+    let $contact_nav = $('.contact-nav');
+    let $contact_wrap = $('.contact-wrap');
 
     // 전체 메뉴 버튼
     let $all_menu_bt = $('.all-menu-bt');
@@ -97,13 +99,27 @@ $(document).ready(function () {
                             mbti_once = 1;
                             $bg.css('transform', 'scale(.8)');
                             return mbti_once;
+                        } else if (this.realIndex == 6){
+                            $contact_nav.addClass('nav-off');
+                            $contact_nav.delay(200).fadeOut(500);
+                        } else if (this.realIndex != 6){
+                            $contact_nav.fadeIn(300);
+                            $contact_nav.removeClass('nav-off');
+                            $contact_nav.mouseleave(function(){
+                                $contact_nav.addClass('contact-on');
+                            });
+                            $contact_nav.mouseenter(function(){
+                                $contact_nav.addClass('contact-on');
+                            });
+                            $contact_nav.mouseleave(function(){
+                                $contact_nav.removeClass('contact-on');
+                            });
                         }
                     }
                 }
             });
         } else if (window.innerWidth <= 1024) {
             if (window.innerWidth > 480) {
-
                 // 마우스 휠 시
                 $('.wrap').bind('mousewheel', function (e) {
                     let pos = parseInt($swiper_wrapper.offset().top);
