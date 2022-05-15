@@ -40,6 +40,7 @@ $(document).ready(function () {
     let $skill_box = $('.skill-box');
     let $skill_txtbox = $('.skill-txtbox');
     let $contact_nav = $('.contact-nav');
+    let $contact_bt = $('.contact-bt');
     let $contact_wrap = $('.contact-wrap');
 
     // 전체 메뉴 버튼
@@ -53,7 +54,7 @@ $(document).ready(function () {
     // 메인화면 
     let stat_once = 0;
     let mbti_once = 0;
-    let menu = ['HOME', 'ABOUT', 'PROJECT', 'SKILL', 'MBTI', 'CONTACT']
+    let menu = ['HOME', 'ABOUT', 'PROJECT', 'SKILL', 'MBTI', 'LIFE','CONTACT']
     let wrap_swiper = undefined;
 
     function wrap() {
@@ -99,19 +100,19 @@ $(document).ready(function () {
                             mbti_once = 1;
                             $bg.css('transform', 'scale(.8)');
                             return mbti_once;
-                        } else if (this.realIndex == 6){
+                        } else if (this.realIndex == 6) {
                             $contact_nav.addClass('nav-off');
-                            $contact_nav.delay(200).fadeOut(500);
-                        } else if (this.realIndex != 6){
+                            $contact_nav.delay(400).fadeOut(200);
+                        } else if (this.realIndex != 6) {
                             $contact_nav.fadeIn(300);
                             $contact_nav.removeClass('nav-off');
-                            $contact_nav.mouseleave(function(){
+                            $contact_nav.mouseleave(function () {
                                 $contact_nav.addClass('contact-on');
                             });
-                            $contact_nav.mouseenter(function(){
+                            $contact_nav.mouseenter(function () {
                                 $contact_nav.addClass('contact-on');
                             });
-                            $contact_nav.mouseleave(function(){
+                            $contact_nav.mouseleave(function () {
                                 $contact_nav.removeClass('contact-on');
                             });
                         }
@@ -119,13 +120,13 @@ $(document).ready(function () {
                 }
             });
         } else if (window.innerWidth <= 1024) {
-            if (window.innerWidth > 480) {
-                // 마우스 휠 시
-                $('.wrap').bind('mousewheel', function (e) {
+            $('.wrap').bind('mousewheel', function (e) {
+                if (window.innerWidth > 480) {
+                    // 마우스 휠 시
                     let pos = parseInt($swiper_wrapper.offset().top);
                     $bg.css('transform', 'translateY(' + pos / 4 + 'px) scale(0.8)');
-                })
-            }
+                }
+            })
 
             if (typeof (wrap_swiper) == 'object') {
                 wrap_swiper.destroy();
@@ -146,16 +147,7 @@ $(document).ready(function () {
                 },
                 on: {
                     slideChange: function () {
-                        // .............gotop 관련 코드............
-                        // let m_index4 = this.realIndex == 4 && window.innerWidth <= 480;
-                        // let index5 = this.realIndex == 5;
-                        // $gotop.toggleClass('white', index5 || m_index4);
-                        // if (this.realIndex != 0) {
-                        //     $gotop.fadeIn(300);
-                        // } else if (this.realIndex == 0) {
-                        //     $gotop.fadeOut(300);
-                        // }
-
+                        contact(this.realIndex);
                         $('.wrap-slide').eq(this.realIndex).addClass('wrap-active');
                         console.log(this.realIndex);
                         if (this.realIndex == 3 && stat_once == 0) {
@@ -168,10 +160,45 @@ $(document).ready(function () {
                             mbti_once = 1;
                             return mbti_once;
                         }
-
                     }
                 }
 
+            });
+        }
+    }
+    // 컨택
+    let contact_once = 0;
+
+    function contact(_index) {
+        if (_index != 6) {
+            $contact_nav.fadeIn(300);
+            $contact_nav.removeClass('nav-off');
+            
+        } else if (_index == 6) {
+            $contact_nav.delay(400).fadeOut(200);
+            if (contact_once == 0) {
+                if (window.innerWidth <= 1024) {
+                    contact_once = 1;
+                }
+                if (window.innerWidth > 1024) {
+                    $contact_nav.addClass('nav-off');
+                }
+            }
+        }
+        if (window.innerWidth < 480) {
+            $contact_bt.click(function () {
+                $contact_nav.toggleClass('contact-on');
+                console.log('tq');
+            })
+        } else if (window.innerWidth >= 480) {
+            $contact_nav.mouseleave(function () {
+                $contact_nav.addClass('contact-on');
+            });
+            $contact_nav.mouseenter(function () {
+                $contact_nav.addClass('contact-on');
+            });
+            $contact_nav.mouseleave(function () {
+                $contact_nav.removeClass('contact-on');
             });
         }
     }
@@ -242,13 +269,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 200,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -290,13 +316,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1300,
             delay: 300,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -338,13 +363,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 400,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -386,13 +410,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -434,13 +457,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -482,13 +504,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -531,13 +552,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -579,13 +599,12 @@ $(document).ready(function () {
             easing: 'easeInOut',
             duration: 1400,
             delay: 600,
-            trailColor: '#bdbdbd',
             trailWidth: 0,
             svgStyle: {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                backgroundColor:''
+                backgroundColor: ''
             },
             text: {
                 style: {
@@ -631,11 +650,11 @@ $(document).ready(function () {
         dbbar.animate(0.40); // Number from 0.0 to 1.0
         phpbar.animate(0.20); // Number from 0.0 to 1.0
     };
-    $.each($skill_box,function(){
+    $.each($skill_box, function () {
         $(this).mousemove(function (e) {
             var offset = $(this).offset();
-            $(this).find($skill_txtbox).css('left',`${Math.ceil(e.pageX - offset.left)}px`);
-            $(this).find($skill_txtbox).css('top',`${Math.ceil(e.pageY - offset.top + 20)}px`);
+            $(this).find($skill_txtbox).css('left', `${Math.ceil(e.pageX - offset.left)}px`);
+            $(this).find($skill_txtbox).css('top', `${Math.ceil(e.pageY - offset.top + 20)}px`);
         });
     })
     // MBTI 프로그레스 바 
@@ -805,6 +824,9 @@ $(document).ready(function () {
         t_bar.set(1);
         t_bar.animate(0.49);
     }
+
+
+
     // 리사이징
     $(window).resize(function () {
         wrap();
@@ -813,5 +835,6 @@ $(document).ready(function () {
         $header.fadeIn(300);
     }).resize();
     wrap();
+    contact();
     $sticker_img.rotate(0);
 })
