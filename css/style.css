@@ -297,7 +297,32 @@ body {
     width: 100%;
     clear: both;
 }
-
+.mb {
+    margin: 0 auto;
+    width: 50% !important;
+    border-radius: 20px;
+}
+.mb .port-txt-box {
+    position: absolute !important;
+}
+.mb .port-box-tit {
+    padding-top: 20% !important;
+    font-size: 2.3rem;
+}
+.mb .work-type {
+    margin-bottom: 30% !important;
+}
+.mb .tag {
+    font-size: 1rem !important;
+}
+.mb .port-link {
+    flex-direction: column;
+    margin-top: 20% !important;
+}
+.mb .port-link-bt {
+    margin: 5% !important;
+    font-size: 1.5rem;
+}
 .container {
     position: absolute;
     top: 50%;
@@ -1246,6 +1271,7 @@ section {
     height: 100%;
     background-color: #000;
     border: 3px solid #000;
+    border-radius: 20px;
     transform: scale(.7);
     z-index: -1;
 }
@@ -1255,7 +1281,7 @@ section {
     transform: scale(1);
     transition: .5s;
     opacity: 1;
-    box-shadow: 0px 0px 15px 0px #000;
+    box-shadow: 0px 0px 15px 0px #7d50f9;
 }
 
 /* .swiper-slide-active>.portfolio-box::after {
@@ -1340,17 +1366,18 @@ section {
 
 .port-link {
     position: relative;
-    margin-top: 5%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
     white-space: nowrap;
 }
 
 .port-link-bt {
     position: relative;
     display: block;
-    font-size: 2.5rem;
-    padding: 5px 10px;
+    font-size: 1.8rem;
+    margin: 5% 10%;
+    padding: 3px 0px;
     background-color: transparent;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -1360,11 +1387,6 @@ section {
     transition: .3s;
 }
 
-.port-link-bt:last-child {
-    margin-left: 30px;
-    font-size: 2.0rem;
-    line-height: 2rem;
-}
 
 .port-link-bt:hover {
     transform: scale(1.1);
@@ -1389,10 +1411,10 @@ section {
     position: relative;
     display: block;
     width: 100%;
-    background-size: cover;
+    background-size: contain;
 }
 
-.swiper-slide-active>.portfolio-box img {
+.portfolio-swiper .swiper-slide-active>.portfolio-box img {
     animation: img-slide 10s .5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
@@ -1401,8 +1423,9 @@ section {
     top: 0;
     display: block;
     padding: 5%;
-    padding-top: 25%;
+    padding-top: 20%;
     width: 100%;
+    text-align: center;
     height: 100%;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.7);
@@ -1413,11 +1436,15 @@ section {
 }
 
 .project-swiper .port-box-tit {
-    height: 15%;
+    height: auto;
+    margin-bottom: 0;
 }
 
 .project-swiper .port-link {
-    margin-top: 5%;
+    margin-top: 2%;
+}
+.project-swiper .port-link-bt {
+    margin: 2% 20%;
 }
 
 .wrap-active .swiper-slide-active>.portfolio-box .port-txt-box {
@@ -1429,7 +1456,7 @@ section {
     position: relative;
     display: block;
     text-align: center;
-    height: 30%;
+    height: 25%;
     font-size: 3rem;
     color: #fff;
     border-radius: 5px;
@@ -1454,13 +1481,14 @@ section {
     display: block;
     color: #fff;
     font-size: 1.6rem;
+    white-space: nowrap;
     text-align: center;
     margin-bottom: 4%;
 }
 
 .project-swiper .work-type {
-    margin-bottom: 2%;
-    font-size: 1.5rem;
+    margin-bottom: 5%;
+    font-size: 1.4rem;
 }
 
 .port-tool-box {
@@ -1479,7 +1507,9 @@ section {
     text-align: center;
     border-radius: 4px;
 }
-
+.project-swiper .tag {
+    font-size: 1.2rem;
+}
 .skill .container {
     padding-top: 10%;
 }
@@ -2182,7 +2212,9 @@ section {
         transition: none;
         transform: scale(.8);
     }
-
+    .mb {
+        width: 60% !important;
+    }
     .gear1 {
         top: 200%;
         left: 60%;
@@ -2636,7 +2668,9 @@ section {
     .swiper-slide {
         height: 130%;
     }
-
+    .mb {
+        width: 80% !important;
+    }
     .gear1 {}
 
     .gear2 {
@@ -2738,28 +2772,36 @@ section {
     }
 
     .port-link {
-        margin-top: 15%;
+        margin-top: 10%;
     }
-
-
 
     .project-swiper .port-txt-box {
         position: relative;
     }
-
+    .work-type {
+        font-size: 2rem !important;
+    }
+    .work-time {
+        font-size: 2rem !important;
+    }
+    .port-link-bt {
+        font-size: 2.2rem !important;
+    }
+    .mb .port-box-tit {
+        font-size: 3rem !important;
+    }
+    .mb .tag {
+        font-size: 1.5rem !important;
+    }
+    
     .life-swiper {
         width: 80%;
-    }
-
-    .life-box-tit {
     }
 
     .all-menu {
         width: 150px;
     }
 
-    .comment-txt {
-    }
 }
 
 @media screen and (max-width: 390px) {
@@ -2806,8 +2848,12 @@ section {
     .portfolio-swiper .portfolio-box {
         height: 80vw;
     }
-
-
+    .port-link {
+        margin-top: 5%;
+    }
+    .mb .port-link {
+        margin-top: 15% !important;
+    }
     .mbti .container {
         padding: 0 10%;
     }
