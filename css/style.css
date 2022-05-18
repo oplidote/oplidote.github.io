@@ -180,7 +180,7 @@ html {
 
 body {
     font-family: 'Goldman', 'Cairo', 'GmarketSansMedium', 'Noto Sans KR', sans-serif;
-    background-color: mintcream;
+    background-color: #f0be25;
     letter-spacing: -.5px;
     width: 100vw;
     height: 100vh;
@@ -2176,7 +2176,7 @@ section {
 }
 @media screen and (max-width: 1024px) {
     html {
-        font-size: 9.5px;
+        font-size: 9px;
     }
     .bg {
         transition: none;
@@ -2365,6 +2365,7 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+    
     .modal-wrap {
         width: 400px;
     }
@@ -2626,7 +2627,9 @@ section {
 }
 
 @media screen and (max-width: 480px) {
-
+    html {
+        font-size: 8px;
+    }
     /* .gotop {
         right: 20px;
     } */
@@ -2746,9 +2749,6 @@ section {
 
     .life-swiper {
         width: 80%;
-    }
-
-    .life-txt {
     }
 
     .life-box-tit {
