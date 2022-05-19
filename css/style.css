@@ -1837,7 +1837,7 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     flex: 1;
     padding-left: 5%;
     opacity: 0;
@@ -1852,31 +1852,34 @@ section {
     position: relative;
     display: block;
     padding: 5%;
-    margin-bottom: 10%;
     font-size: 1.6rem;
     line-height: 2rem;
     word-break: keep-all;
     text-align: center;
     border-radius: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid #000;
-    box-shadow: 0px 0px 10px 0px blue;
+    box-shadow: 0px 0px 10px 0px rgb(68, 68, 255);
+    transition: .3s;
 }
-
+.keyword:hover {
+    transform: scale(1.1);
+}
 .keyword+.keyword {
-    color: #888;
-    box-shadow: 0px 0px 10px 0px red;
+    color: #ccc;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 10px 0px rgb(253, 95, 95);
 }
 
 .keyword b {
     position: absolute;
-    top: -15px;
+    top: -28px;
     left: 50%;
-    padding: 5px 15px;
-    background-color: #fff;
     transform: translateX(-50%);
     display: inline-block;
     white-space: nowrap;
-    font-size: 2.0rem;
+    font-size: 2.5rem;
 }
 
 .keyword+.keyword {}
@@ -2080,12 +2083,11 @@ section {
     color: #7d50f9;
     padding-right: 30px;
     z-index: 99;
+    transition: .3s;
 }
 
 .sw-life-next:hover {
-    transition: .3s;
-    padding-left: 10px;
-    padding-right: 20px;
+    transform: scale(1.1);
 }
 
 .sw-life-next::after {
@@ -2098,10 +2100,10 @@ section {
     display: block;
     background: url('../images/life_arr2.png')no-repeat center;
     background-size: contain;
+    transition: .3s;
 }
 
 .sw-life-next:hover::after {
-    transition: .3s;
     right: -10px;
 }
 
@@ -2114,7 +2116,7 @@ section {
 }
 
 .contact .container {
-    padding: 0;
+    padding: 5% 0 0 0;
 }
 
 .contact::after {
@@ -2146,7 +2148,9 @@ section {
     transition-delay: .7s;
     color: #fff;
 }
-
+.contact-tit {
+    top: 10%;
+}
 .contact-tit span::after {
     background-color: #fff;
 }
@@ -2193,7 +2197,7 @@ section {
     color: #fff;
     padding-left: 1%;
     font-size: 1.4rem;
-    line-height: 3rem;
+    line-height: 30px;
     opacity: .5;
 }
 
@@ -2394,6 +2398,9 @@ section {
     .life-img {
         width: 50%;
     }
+    .contact-tit {
+        top: 15%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -2461,7 +2468,10 @@ section {
         width: 40vw;
     }
     .port-link {
-        margin-top: 15%;
+        margin-top: 10%;
+    }
+    .port-link-bt {
+        font-size: 2.2rem;
     }
 
     .portfolio-swiper .portfolio-box {
@@ -2471,7 +2481,6 @@ section {
     .project-swiper {
         width: 55vw;
     }
-
     .pc {
         display: none;
     }
@@ -2514,8 +2523,16 @@ section {
         grid-row: 2 / 3;
     }
 
-    .skill-txtbox {
+    .skill-box:nth-child(2) .skill-txtbox,
+    .skill-box:nth-child(7) .skill-txtbox {
         transform: translateX(-50%) !important;
+    }
+    .skill-box:nth-child(4) .skill-txtbox {
+        transform: translateX(0) !important;
+    }
+    .skill-box:nth-child(3) .skill-txtbox,
+    .skill-box:nth-child(5) .skill-txtbox {
+        transform: translateX(-80%) !important;
     }
 
     .life .tit {
@@ -2623,9 +2640,6 @@ section {
 
     .mbti-stat {
         margin-bottom: 5%;
-    }
-
-    .keyword {
     }
 
     .life-box {
@@ -2771,10 +2785,6 @@ section {
         transform: translateX(-50%);
     }
 
-    .port-link {
-        margin-top: 10%;
-    }
-
     .project-swiper .port-txt-box {
         position: relative;
     }
@@ -2852,7 +2862,7 @@ section {
         margin-top: 5%;
     }
     .mb .port-link {
-        margin-top: 15% !important;
+        margin-top: 10% !important;
     }
     .mbti .container {
         padding: 0 10%;
@@ -2917,5 +2927,7 @@ section {
     .link-box img {
         width: 35px;
     }
-
+    .comment-txt {
+        font-size: 1.2rem;
+    }
 }
