@@ -2016,6 +2016,7 @@ section {
     border-radius: 50%;
     overflow: hidden;
     z-index: 1;
+    background-color: #000;
     box-shadow: 0px 0px 15px -4px #333;
 }
 
@@ -2641,7 +2642,9 @@ section {
     .mbti-stat {
         margin-bottom: 5%;
     }
-
+    .keyword {
+        margin-top: 10%;
+    }
     .life-box {
         flex-direction: column;
     }
@@ -2749,9 +2752,6 @@ section {
         padding: 0;
     }
 
-    .profile-txt span {
-        line-height: 2rem;
-    }
 
     .skill-prg {
         width: 100px;
@@ -2847,9 +2847,6 @@ section {
         padding: 0 10%;
     }
 
-    .profile-txt span {
-        line-height: 2rem;
-    }
 
     .portfolio-swiper {
         width: 65vw;
