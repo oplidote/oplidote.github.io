@@ -509,6 +509,7 @@ body {
 
 .contact-bt span {
     transition: .3s;
+    font-size: 16px;
     opacity: 0;
     cursor: none;
 }
@@ -1121,7 +1122,9 @@ section {
     opacity: 0;
     transition: .5s;
 }
-
+.portfolio .swiper-wrapper {
+    align-items: center;
+}
 .wrap-active .portfolio {
     opacity: 1;
 }
@@ -1168,6 +1171,7 @@ section {
 .port-change {
     position: relative;
     display: block;
+    margin-top: 5%;
     opacity: 0;
     text-align: center;
     transition: .5s;
@@ -1242,6 +1246,7 @@ section {
     transform: translate(-50%, -50%);
     display: block;
     width: 35vw;
+    height: 28vw;
     margin: 0 auto;
     margin-bottom: 5vw;
     opacity: 0;
@@ -1275,7 +1280,12 @@ section {
     transform: scale(.7);
     z-index: -1;
 }
-
+.project-swiper .swiper-slide {
+    height: auto;
+}
+.project-swiper .portfolio-box {
+    height: auto;
+}
 .swiper-slide-active>.portfolio-box {
     z-index: 1;
     transform: scale(1);
@@ -1310,7 +1320,7 @@ section {
 
 .sw-portfolio-next {
     position: absolute;
-    right: 2%;
+    right: calc(50% - 20vw);
     display: block;
     width: 50px;
     height: 50px;
@@ -1350,7 +1360,7 @@ section {
 .sw-portfolio-prev {
     position: absolute;
     z-index: 999;
-    left: 2%;
+    left: calc(50% - 20vw);
     display: block;
     width: 50px;
     height: 50px;
@@ -1548,7 +1558,7 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3.0rem;
+    font-size: 2.4rem;
     color: #000;
     white-space: nowrap;
     cursor: default;
@@ -1837,7 +1847,7 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex: 1;
     padding-left: 5%;
     opacity: 0;
@@ -1912,7 +1922,7 @@ section {
     bottom: 20px;
     display: none;
     font-size: 1.4rem;
-    color: #999;
+    color: #fff;
 }
 
 .copy.pc {
@@ -2290,6 +2300,7 @@ section {
     }
 
     .portfolio .swiper-wrapper {
+        align-items: center;
         padding-top: 12vh;
     }
 
