@@ -299,7 +299,7 @@ body {
 }
 .mb {
     margin: 0 auto;
-    width: 50% !important;
+    width: 60% !important;
     border-radius: 20px;
 }
 .mb .port-txt-box {
@@ -310,18 +310,14 @@ body {
     font-size: 2.3rem;
 }
 .mb .work-type {
-    margin-bottom: 30% !important;
-}
-.mb .tag {
-    font-size: 1rem !important;
+    margin-bottom: 20% !important;
 }
 .mb .port-link {
     flex-direction: column;
-    margin-top: 20% !important;
+    margin-top: 25% !important;
 }
 .mb .port-link-bt {
     margin: 5% !important;
-    font-size: 1.5rem;
 }
 .container {
     position: absolute;
@@ -1169,12 +1165,11 @@ section {
 }
 
 .port-change {
-    position: relative;
-    display: block;
-    margin-top: 5%;
     opacity: 0;
     text-align: center;
     transition: .5s;
+    white-space: nowrap;
+    z-index: 999;
 }
 
 .wrap-active .port-change {
@@ -1184,7 +1179,6 @@ section {
 .port-change button {
     position: relative;
     display: inline-block;
-    margin: 0 78px;
     margin-bottom: 5%;
     border: 0;
     padding-left: 15px;
@@ -1198,7 +1192,9 @@ section {
     line-height: 3rem;
     z-index: 99;
 }
-
+.port-change button:last-child {
+    margin-left: 50px;
+}
 .port-change button::before {
     content: '';
     position: absolute;
@@ -1226,32 +1222,25 @@ section {
     background-color: red;
 }
 
-.portfolio-swiper {
-    position: absolute !important;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 23vw;
-    height: 28vw;
-    margin: 0 auto;
-    opacity: 0;
-    z-index: -1;
-    transition: .5s;
-}
-
-.project-swiper {
+.portfolio .swiper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
-    width: 35vw;
-    height: 28vw;
+    padding-top: 10vh;
     margin: 0 auto;
-    margin-bottom: 5vw;
     opacity: 0;
     z-index: -1;
     transition: .5s;
+}
+.portfolio-swiper {
+    width: 23vw;
+}
+
+.project-swiper {
+    width: 35vw;
+    
 }
 
 .clone-on .portfolio-swiper {
@@ -1266,6 +1255,7 @@ section {
 
 .portfolio .swiper-wrapper {
     padding-top: 10vh;
+    height: auto;
 }
 
 .portfolio-box {
@@ -1273,7 +1263,7 @@ section {
     display: block;
     overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: 30vw;
     background-color: #000;
     border: 3px solid #000;
     border-radius: 20px;
@@ -1378,7 +1368,7 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 15%;
     white-space: nowrap;
 }
 
@@ -1433,7 +1423,7 @@ section {
     top: 0;
     display: block;
     padding: 5%;
-    padding-top: 20%;
+    padding-top: 25%;
     width: 100%;
     text-align: center;
     height: 100%;
@@ -1466,7 +1456,7 @@ section {
     position: relative;
     display: block;
     text-align: center;
-    height: 25%;
+    height: 20%;
     font-size: 3rem;
     color: #fff;
     border-radius: 5px;
@@ -1475,13 +1465,28 @@ section {
 
 
 .work-time {
-    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
     font-size: 1.6rem;
     text-align: center;
     color: #fff;
-    margin-bottom: 4%;
+    padding-left: 30px;
+    line-height: 25px;
+    margin-bottom: 5%;
 }
-
+.work-time::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background:url('../images/timer.png') no-repeat center;
+    background-size: contain;
+}
 .project-swiper .work-time {
     margin-bottom: 2%;
     font-size: 1.5rem;
@@ -2227,9 +2232,6 @@ section {
         transition: none;
         transform: scale(.8);
     }
-    .mb {
-        width: 60% !important;
-    }
     .gear1 {
         top: 200%;
         left: 60%;
@@ -2284,9 +2286,13 @@ section {
     }
     .portfolio .swiper {
         top: auto;
+        padding-top: 0;
         transform: translateX(-50%);
     }
-
+    .port-change {
+        position: relative;
+        top: 0;
+    }
     .portfolio-swiper {
         width: 30vw;
     }
@@ -2378,13 +2384,6 @@ section {
         animation-delay: 1.4s !important;
     }
 
-    .sw-portfolio-next {
-        top: 40%;
-    }
-
-    .sw-portfolio-prev {
-        top: 40%;
-    }
 
     .comment-txt {
         margin-top: 0;
@@ -2480,7 +2479,7 @@ section {
         width: 40vw;
     }
     .port-link {
-        margin-top: 10%;
+        margin-top: 5%;
     }
     .port-link-bt {
         font-size: 2.2rem;
@@ -2513,7 +2512,7 @@ section {
         margin: 5%;
     }
     .skill-box-tit {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .skill-prg {
         width: 135px;
@@ -2636,6 +2635,7 @@ section {
 
     .project-swiper {
         width: 65vw;
+        height: 50vw;
     }
 
     .portfolio-swiper .portfolio-box {
@@ -2795,7 +2795,12 @@ section {
         left: 50%;
         transform: translateX(-50%);
     }
-
+    .sw-portfolio-prev {
+        left:calc(50% - 40vw);
+    }
+    .sw-portfolio-next {
+        right:calc(50% - 40vw);
+    }
     .project-swiper .port-txt-box {
         position: relative;
     }
