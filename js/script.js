@@ -547,108 +547,12 @@ $(document).ready(function () {
             },
         });
 
-        let dbbar = new ProgressBar.Circle(dbstat, {
-            strokeWidth: 5,
-            easing: 'easeInOut',
-            duration: 1400,
-            delay: 600,
-            trailWidth: 0,
-            svgStyle: {
-                width: '100%',
-                height: '100%',
-                borderRadius: '50%',
-                backgroundColor: ''
-            },
-            text: {
-                style: {
-                    color: '#000',
-                    whiteSpace: 'nowrap',
-                    position: 'absolute',
-                    cursor: 'default',
-                    transform: 'translateX(-50%)',
-                    left: '50%',
-                    top: '60%',
-                    fontSize: '20px',
-                    letterSpacing: '-1px',
-                },
-                autoStyleContainer: false,
-            },
-            step: function (state, circle) {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-
-                var value = Math.round(circle.value() * 100);
-                if (value === 0) {
-                    circle.setText('');
-                } else {
-                    circle.setText(value);
-                }
-
-            },
-            from: {
-                color: '#1b2955',
-                width: 5
-            },
-            to: {
-                color: '#1b2955',
-                width: 5
-            },
-        });
-        let phpbar = new ProgressBar.Circle(phpstat, {
-            strokeWidth: 5,
-            easing: 'easeInOut',
-            duration: 1400,
-            delay: 600,
-            trailWidth: 0,
-            svgStyle: {
-                width: '100%',
-                height: '100%',
-                borderRadius: '50%',
-                backgroundColor: ''
-            },
-            text: {
-                style: {
-                    color: '#000',
-                    whiteSpace: 'nowrap',
-                    position: 'absolute',
-                    cursor: 'default',
-                    transform: 'translateX(-50%)',
-                    left: '50%',
-                    top: '60%',
-                    fontSize: '20px',
-                    letterSpacing: '-1px',
-                },
-                autoStyleContainer: false,
-            },
-            step: function (state, circle) {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-
-                var value = Math.round(circle.value() * 100);
-                if (value === 0) {
-                    circle.setText('');
-                } else {
-                    circle.setText(value);
-                }
-
-            },
-            from: {
-                color: '#8b93bb',
-                width: 5
-            },
-            to: {
-                color: '#8b93bb',
-                width: 5
-            },
-        });
         htmlbar.animate(0.97); // Number from 0.0 to 1.0
         cssbar.animate(0.97); // Number from 0.0 to 1.0
-        jsbar.animate(0.9); // Number from 0.0 to 1.0
-        vuebar.animate(0.75); // Number from 0.0 to 1.0
+        jsbar.animate(0.8); // Number from 0.0 to 1.0
+        vuebar.animate(0.60); // Number from 0.0 to 1.0
         gitbar.animate(0.70); // Number from 0.0 to 1.0
-        bootbar.animate(0.70); // Number from 0.0 to 1.0
-        dbbar.animate(0.40); // Number from 0.0 to 1.0
-        phpbar.animate(0.20); // Number from 0.0 to 1.0
+        bootbar.animate(0.60); // Number from 0.0 to 1.0
     };
     $.each($skill_box, function () {
         $(this).mousemove(function (e) {
